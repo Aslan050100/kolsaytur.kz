@@ -31,7 +31,7 @@
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Kolsaytur</a>
+	      <a class="navbar-brand" href="{{route('index')}}">Kolsaytur</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -114,11 +114,13 @@
 
 		              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
 		              	<div class="row">
+                            @foreach($products as $product)
 		              		<div class="item">
                                 <div class="room-wrap">
                                     <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
                                     <div class="text pt-4 pl-lg-5">
-                                        <h2><a href="{{route('details')}}">Hotel Mumbai</a></h2>
+                                        <h2><a href="{{route('details')}}">{{$product->name}}</a></h2>
+                                        
                                         <p class="rate">
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
@@ -134,58 +136,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="room-wrap">
-                                    <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
-                                    <div class="text pt-4 pl-lg-5">
-                                        <h2><a href="room.html">House Aslan</a></h2>
-                                        <p class="rate">
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star-half-full"></span>
-                                        </p>
-                                        <p class="d-flex price-details align-items-center pt-3">
-                                            <span>Starting From</span>
-                                            <span class="price">$120<small>/ night</small></span>
-                                        </p>
-                                        <p><a href="#" class="btn-customize">Reserve A Room</a></p>
-                                    </div>
-                                </div>
-                            </div>
-		              		
-		              		
+                            @endforeach
 		              	</div>
 		              </div>
 
 		              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
 		                <div class="row">
-		              		<div class="item">
-                                <div class="room-wrap">
-                                    <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
-                                    <div class="text pt-4 pl-lg-5">
-                                        <h2><a href="room.html">Superior Room</a></h2>
-                                        <p class="rate">
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star-half-full"></span>
-                                        </p>
-                                        <p class="d-flex price-details align-items-center pt-3">
-                                            <span>Starting From</span>
-                                            <span class="price">$120<small>/ night</small></span>
-                                        </p>
-                                        <p><a href="#" class="btn-customize">Reserve A Room</a></p>
-                                    </div>
-                                </div>
-                            </div>
+		              		
+                            @foreach($products as $product)
                             <div class="item">
                                 <div class="room-wrap">
                                     <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
                                     <div class="text pt-4 pl-lg-5">
-                                        <h2><a href="room.html">Superior Room</a></h2>
+                                        <h2><a href="{{route('details')}}">{{$product->name}}</a></h2>
+                                        
                                         <p class="rate">
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
@@ -201,37 +165,20 @@
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
 		              		
 		              	</div>
 		              </div>
 
 		              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
 		                <div class="row">
-		              		<div class="item">
-                                <div class="room-wrap">
-                                    <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
-                                    <div class="text pt-4 pl-lg-5">
-                                        <h2><a href="room.html">Superior Room</a></h2>
-                                        <p class="rate">
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star-half-full"></span>
-                                        </p>
-                                        <p class="d-flex price-details align-items-center pt-3">
-                                            <span>Starting From</span>
-                                            <span class="price">$120<small>/ night</small></span>
-                                        </p>
-                                        <p><a href="#" class="btn-customize">Reserve A Room</a></p>
-                                    </div>
-                                </div>
-                            </div>
+		              		@foreach($products as $product)
                             <div class="item">
                                 <div class="room-wrap">
                                     <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
                                     <div class="text pt-4 pl-lg-5">
-                                        <h2><a href="room.html">Superior Room</a></h2>
+                                        <h2><a href="{{route('details')}}">{{$product->name}}</a></h2>
+                                        
                                         <p class="rate">
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
@@ -247,6 +194,7 @@
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
 		              	</div>
 		              </div>
 		            </div>

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/',['uses'=>'MainController@index','as'=>'index']);
 
 Route::get('/details',['uses'=>'DetailsController@index','as'=>'details']);
 
