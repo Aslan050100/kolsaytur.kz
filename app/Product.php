@@ -20,7 +20,7 @@ class Product extends Model
     }
 
     public function ratings(){
-    	return $this->belongsTo('App\Rating');
+    	return $this->hasOne('App\Rating');
     }
 
 

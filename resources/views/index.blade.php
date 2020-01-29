@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>IslaGrande - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Kolsaytur.kz</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -86,10 +86,11 @@
           <div class="col-md-7 heading-section text-center ftco-animate">
           	<span class="subheading">Discover</span>
             <h2 class="mb-4">НАЙДИТЕ ЖИЛЬЕ В Kolsay ВМЕСТЕ С KOLSAYTUR.KZ</h2>
-            <form>
+            <form action="{{route('search')}}" method="post"  enctype="multipart/form-data">
+              {{ csrf_field() }}
                 <p>Цена</p>
-                 <input type="text" name="tgot" placeholder="от (тг)">
-                 <input type="text" name="tgdo" placeholder="до (тг)">
+                 <input type="text" name="first_price" placeholder="от (тг)">
+                 <input type="text" name="second_price" placeholder="до (тг)">
 
                  <input type="submit" name="submit" value="Найти жилье">
                 
@@ -113,14 +114,17 @@
 		            <div class="tab-content ftco-animate" id="v-pills-tabContent">
 
 		              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
+                    <h4>Последние добавленные</h4>
 		              	<div class="row">
                             @foreach($products as $product)
-		              		<div class="item">
+		              		      <div class="item">
                                 <div class="room-wrap">
                                     <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
                                     <div class="text pt-4 pl-lg-5">
-                                        <h2><a href="{{route('details')}}">{{$product->name}}</a></h2>
-                                        
+                                        <h2><a href="{{route('details')}}">{{$product[0]['name']}}</a></h2>
+                                        <p class="d-flex price-details align-items-center pt-3">
+                                            Price
+                                        </p>
                                         <p class="rate">
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
@@ -128,11 +132,7 @@
                                             <span class="icon-star"></span>
                                             <span class="icon-star-half-full"></span>
                                         </p>
-                                        <p class="d-flex price-details align-items-center pt-3">
-                                            <span>Starting From</span>
-                                            <span class="price">$120<small>/ night</small></span>
-                                        </p>
-                                        <p><a href="#" class="btn-customize">Reserve A Room</a></p>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -141,60 +141,17 @@
 		              </div>
 
 		              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
+                    <h4>Популярные</h4>
 		                <div class="row">
 		              		
-                            @foreach($products as $product)
-                            <div class="item">
-                                <div class="room-wrap">
-                                    <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
-                                    <div class="text pt-4 pl-lg-5">
-                                        <h2><a href="{{route('details')}}">{{$product->name}}</a></h2>
-                                        
-                                        <p class="rate">
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star-half-full"></span>
-                                        </p>
-                                        <p class="d-flex price-details align-items-center pt-3">
-                                            <span>Starting From</span>
-                                            <span class="price">$120<small>/ night</small></span>
-                                        </p>
-                                        <p><a href="#" class="btn-customize">Reserve A Room</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
 		              		
 		              	</div>
 		              </div>
 
 		              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
+                    <h4>Часто посещаемые</h4>
 		                <div class="row">
-		              		@foreach($products as $product)
-                            <div class="item">
-                                <div class="room-wrap">
-                                    <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
-                                    <div class="text pt-4 pl-lg-5">
-                                        <h2><a href="{{route('details')}}">{{$product->name}}</a></h2>
-                                        
-                                        <p class="rate">
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star"></span>
-                                            <span class="icon-star-half-full"></span>
-                                        </p>
-                                        <p class="d-flex price-details align-items-center pt-3">
-                                            <span>Starting From</span>
-                                            <span class="price">$120<small>/ night</small></span>
-                                        </p>
-                                        <p><a href="#" class="btn-customize">Reserve A Room</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
+		              		
 		              	</div>
 		              </div>
 		            </div>

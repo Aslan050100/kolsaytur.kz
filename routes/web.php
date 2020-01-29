@@ -15,3 +15,4 @@ Route::get('/',['uses'=>'MainController@index','as'=>'index']);
 
 Route::get('/details',['uses'=>'DetailsController@index','as'=>'details']);
 
+Route::match(['get','post'],'/search',['uses'=>'MainController@search','as'=>'search']);

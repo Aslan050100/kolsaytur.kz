@@ -15,6 +15,6 @@ class Room extends Model
 
 
     public function products(){
-    	return $this->belongsToMany('App\Room','pro_room','room_id','pro_id');
+    	return $this->belongsToMany('App\Product','pro_room','room_id','pro_id');
     }
 }

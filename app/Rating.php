@@ -11,6 +11,6 @@ class Rating extends Model
 
 
     public function products(){
-    	return $this->hasMany('App\Product');
+    	return $this->belongsTo('App\Product');
     } 
 }
