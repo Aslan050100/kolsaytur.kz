@@ -89,10 +89,11 @@
             <form action="{{route('search')}}" method="post"  enctype="multipart/form-data">
               {{ csrf_field() }}
                 <p>Цена</p>
-                 <input type="text" name="first_price" placeholder="от (тг)">
-                 <input type="text" name="second_price" placeholder="до (тг)">
+                 <input type="text" name="first_price" placeholder="от (тг)" required>
+                 <input type="text" name="second_price" placeholder="до (тг)" required>
 
                  <input type="submit" name="submit" value="Найти жилье">
+
                 
             </form>
           </div>
@@ -116,34 +117,70 @@
 		              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
                     <h4>Последние добавленные</h4>
 		              	<div class="row">
+                      @if($products  != null)
                             @foreach($products as $product)
 		              		      <div class="item">
                                 <div class="room-wrap">
                                     <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
                                     <div class="text pt-4 pl-lg-5">
-                                        <h2><a href="{{route('details')}}">{{$product[0]['name']}}</a></h2>
+                                        <h2><a href="{{route('details',[$product[0]['id']])}}">{{$product[0]['name']}}</a></h2>
+                                        <p></p>
                                         <p class="d-flex price-details align-items-center pt-3">
-                                            Price
+                                            Price ot 
                                         </p>
                                         <p class="rate">
+                                         <span>{{$product[0]['rating']}}</span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star-half-full"></span>
+
                                         </p>
                                         
                                     </div>
                                 </div>
                             </div>
                             @endforeach
+                      @else
+                      <h1>Нету такой продукт</h1>
+                      @endif
 		              	</div>
 		              </div>
 
 		              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
                     <h4>Популярные</h4>
 		                <div class="row">
-		              		
+		              		<div class="row">
+                      @if($products  != null)
+                            @foreach($products as $product)
+                            <div class="item">
+                                <div class="room-wrap">
+                                    <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
+                                    <div class="text pt-4 pl-lg-5">
+                                        <h2><a href="">{{$product[0]['name']}}</a></h2>
+                                        <p></p>
+                                        <p class="d-flex price-details align-items-center pt-3">
+                                            Price ot 
+                                        </p>
+                                        <p class="rate">
+                                         <span>{{$product[0]['rating']}}</span>
+                                            <span class="icon-star"></span>
+                                            <span class="icon-star"></span>
+                                            <span class="icon-star"></span>
+                                            <span class="icon-star"></span>
+                                            <span class="icon-star-half-full"></span>
+
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                      @else
+                      <h1>Нету такой продукт</h1>
+                      @endif
+                    </div>
 		              		
 		              	</div>
 		              </div>
@@ -151,7 +188,36 @@
 		              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
                     <h4>Часто посещаемые</h4>
 		                <div class="row">
-		              		
+		              		<div class="row">
+                      @if($products  != null)
+                            @foreach($products as $product)
+                            <div class="item">
+                                <div class="room-wrap">
+                                    <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
+                                    <div class="text pt-4 pl-lg-5">
+                                        <h2><a href="">{{$product[0]['name']}}</a></h2>
+                                        <p></p>
+                                        <p class="d-flex price-details align-items-center pt-3">
+                                            Price ot 
+                                        </p>
+                                        <p class="rate">
+                                         <span>{{$product[0]['rating']}}</span>
+                                            <span class="icon-star"></span>
+                                            <span class="icon-star"></span>
+                                            <span class="icon-star"></span>
+                                            <span class="icon-star"></span>
+                                            <span class="icon-star-half-full"></span>
+
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                      @else
+                      <h1>Нету такой продукт</h1>
+                      @endif
+                    </div>
 		              	</div>
 		              </div>
 		            </div>

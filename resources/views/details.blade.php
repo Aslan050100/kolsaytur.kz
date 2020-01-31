@@ -49,9 +49,10 @@
     <section class="hero-wrap d-flex js-fullheight">
     	<div class="forth js-fullheight d-flex align-items-center">
     		<div class="text">
-    			<h2>Welcome to Kolsay</h2>
-    			<h1 class="mb-5">A Perfect Place To Stay</h1>
-    			<p><a href="#" class="btn-custom py-3 pr-2">Make A Booking</a></p>
+
+    			<h2>Welcome to  {{$product->name}}</h2>
+    			<h1 class="mb-5"> {{$product->name}} </h1>
+    			<p>{{$product->description}}</p>
     		</div>
     	</div>
     	<div class="third js-fullheight">
@@ -83,28 +84,29 @@
     				<h3 class="mb-4 mb-lg-0">Reserve A Perfect Room</h3>
     			</div>
     			<div class="col-lg-10">
-	    			<form action="#" class="booking-form">
+	    			<form action="{{route('addOrder',[$product->id])}}" class="booking-form">
+	    				{{@csrf_field()}}
 	    				<div class="d-lg-flex align-items-md-end">
 		    				<div class="form-group mb-3 mb-lg-0 mr-4">
 		    					<label for="#">Check-in Date</label>
-		    					<input type="text" class="form-control checkin_date" placeholder="Check-in date">
+		    					<input type="text" name='checkin' class="form-control checkin_date" placeholder="Check-in date" required>
 		    				</div>
 		    				<div class="form-group mb-3 mb-lg-0 mr-4">
 		    					<label for="#">Check-out Date</label>
-		    					<input type="text" class="form-control checkout_date" placeholder="Check-out date">
+		    					<input type="text" name='checkout' class="form-control checkout_date" placeholder="Check-out date" required>
 		    				</div>
                             <div class="form-group mb-3 mb-lg-0 mr-4">
                             
                            
                                        
-                                <input type="name" name="name" placeholder="ФИО">
+                                <input type="name" name="name" placeholder="ФИО" required>
                   
                          
-                                <input type="email" name="email"  placeholder="e-mail">
+                                <input type="email" name="email"  placeholder="e-mail" required>
                        
                         
                                         
-                                <input type="name" name="number"  placeholder="phone number">
+                                <input type="name" name="phone"  placeholder="phone number" required>
                               
                           </div>
 		    				<div class="form-group mb-3 mb-lg-0 mr-4">
@@ -112,13 +114,13 @@
 	      					<div class="form-field">
 	        					<div class="select-wrap">
 	                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-	                    <select name="" id="" class="form-control">
+	                    <select name="room_type" id="" class="form-control">
 	                    	<option value="">Suite</option>
-	                      <option value="">Family Room</option>
-	                      <option value="">Deluxe Room</option>
-	                      <option value="">Classic Room</option>
-	                      <option value="">Superior Room</option>
-	                      <option value="">Luxury Room</option>
+	                      <option value="Family">Family Room</option>
+	                      <option value="Deluxe">Deluxe Room</option>
+	                      <option value="Classic">Classic Room</option>
+	                      <option value="Superior">Superior Room</option>
+	                      <option value="Luxury">Luxury Room</option>
 	                    </select>
 	                  </div>
 		              </div>
@@ -128,12 +130,12 @@
 	      					<div class="form-field">
 	        					<div class="select-wrap">
 	                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-	                    <select name="" id="" class="form-control">
-	                    	<option value="">1</option>
-	                      <option value="">2</option>
-	                      <option value="">3</option>
-	                      <option value="">4</option>
-	                      <option value="">5</option>
+	                    <select name="adults" id="" class="form-control">
+	                    	<option value="1">1</option>
+	                      <option value="2">2</option>
+	                      <option value="3">3</option>
+	                      <option value="4">4</option>
+	                      <option value="5">5</option>
 	                    </select>
 	                  </div>
 		              </div>
@@ -143,12 +145,12 @@
 	      					<div class="form-field">
 	        					<div class="select-wrap">
 	                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-	                    <select name="" id="" class="form-control">
-	                    	<option value="">1</option>
-	                      <option value="">2</option>
-	                      <option value="">3</option>
-	                      <option value="">4</option>
-	                      <option value="">5</option>
+	                    <select name="children" id="" class="form-control">
+	                    	<option value="1">1</option>
+	                      <option value="2">2</option>
+	                      <option value="3">3</option>
+	                      <option value="4">4</option>
+	                      <option value="5">5</option>
 	                    </select>
 	                  </div>
 		              </div>
@@ -162,12 +164,44 @@
     		</div>
     	</div>
     </section>
+
+    <section class="ftco-booking">
+    	<h2>Comforts</h2>
+    	@foreach($comforts as $comfort)
+    	<div style="border: 1px solid red;">
+    		<img src="img/{{$comfort['icon']}}">
+    		<h4>{{$comfort['name']}}</h4>
+    		<p>{{$comfort['description']}}</p>	
+    	</div>
+    	@endforeach
+    </section>
+
+      <section class="ftco-booking">
+    	<h2>Rooms</h2>
+    	@foreach($rooms as $room)
+    	<div style="border: 1px solid red;">
+    		<img src="img/{{$comfort['image']}}">	
+    		Mesto:
+    		<h4>{{$room['name']}}</h4>	
+    		Price
+    		<h4>{{$room['price']}}</h4>
+    		Room type
+    		<h4></h4>
+    	</div>
+    	@endforeach
+    </section>
 		
 	
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
+ <script>
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      alert(msg);
+    }
+  </script>
 
   <script src="{{asset('assets/js/jquery.min.js')}}"></script>
   <script src="{{asset('assets/js/jquery-migrate-3.0.1.min.js')}}"></script>

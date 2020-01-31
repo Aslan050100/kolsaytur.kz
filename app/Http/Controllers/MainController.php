@@ -12,27 +12,26 @@ class MainController extends Controller
 {
     //
     public function index (Request $req){
-    	$id = 1;
-    	$pro_type = Product_type::find($id);
-    	$rooms = Room::first();
-    	$comfrots = Comfort::all();
-    	$products = Product::all();
-    	return view('index',['products'=>$products]);
-    
+        $rooms  = Room::get();
+        $prods = [];
+        for ($i = 0; $i <= ($rooms->count()-1); $i++) {
+            array_push($prods,$rooms[$i]->products);
+        }
+    	return view('index',['products'=>array_unique($prods)]);
     }
     public function search(Request $req){
     	$first_price = $req->first_price;
     	$second_price = $req->second_price;
-    	$rooms  = Room::where('price','<=',$second_price)->where('price','>=',$first_price)->get();
-    	//dd($rooms);
+        $rooms  = Room::where('price','<=',$second_price)->where('price','>=',$first_price)->get();
     	$prods = [];
-    	//$products = $rooms[0]->products;
-    	//dd($rooms->count());
     	for ($i = 0; $i <= ($rooms->count()-1); $i++) {
     		array_push($prods,$rooms[$i]->products);
     	}
-    	//dd($prods[1][0]->rating);
-    	//dd($prods[1][0]->pluck('rating_id'));
-    	return view('index',['products'=>array_unique($prods)]);
+        $rooms_price=[];
+        for ($i = 0; $i <= ($rooms->count()-1); $i++) {
+            array_push($rooms_price,$prods[$i][0]->rooms[0]->price);
+        }
+       return view('index',['products'=>array_unique($prods)]);
+    
     }
 }

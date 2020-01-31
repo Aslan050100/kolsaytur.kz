@@ -22,14 +22,13 @@ class CreateProductsTable extends Migration
             $table->string('map', 250);
             $table->unsignedBigInteger('product_type_id');
             $table->unsignedBigInteger('city_id');
-            $table->unsignedBigInteger('rating_id');
-            $table->unsignedBigInteger('visit_id');
+            $table->double('rating');
+            $table->integer('visit');
             $table->timestamps();
             $table->foreign('product_type_id')->references('id')->on('product_types')->onDelete('cascade');
             
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
-            $table->foreign('rating_id')->references('id')->on('ratings')->onDelete('cascade');
-            $table->foreign('visit_id')->references('id')->on('visits')->onDelete('cascade');
+            
         });
     }
 
