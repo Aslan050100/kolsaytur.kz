@@ -123,19 +123,18 @@
                                 <div class="room-wrap">
                                     <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
                                     <div class="text pt-4 pl-lg-5">
-                                        <h2><a href="{{route('details',[$product[0]['id']])}}">{{$product[0]['name']}}</a></h2>
+                                        <h2><a href="{{route('details',[$product->id])}}">{{$product->name}}</a></h2>
                                         <p></p>
                                         <p class="d-flex price-details align-items-center pt-3">
-                                            Price ot 
+                                            ot {{$product->rooms->min('price')}} - do {{$product->rooms->max('price')}}
                                         </p>
                                         <p class="rate">
-                                         <span>{{$product[0]['rating']}}</span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star-half-full"></span>
-
+                                         <span>{{$product->rating}}</span>
                                         </p>
                                         
                                     </div>
@@ -153,24 +152,23 @@
 		                <div class="row">
 		              		<div class="row">
                       @if($products  != null)
-                            @foreach($products as $product)
+                           @foreach($products as $product)
                             <div class="item">
                                 <div class="room-wrap">
                                     <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
                                     <div class="text pt-4 pl-lg-5">
-                                        <h2><a href="">{{$product[0]['name']}}</a></h2>
+                                        <h2><a href="{{route('details',[$product->id])}}">{{$product->name}}</a></h2>
                                         <p></p>
                                         <p class="d-flex price-details align-items-center pt-3">
-                                            Price ot 
+                                            ot {{$product->rooms->min('price')}} - do {{$product->rooms->max('price')}}
                                         </p>
                                         <p class="rate">
-                                         <span>{{$product[0]['rating']}}</span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star-half-full"></span>
-
+                                         <span>{{$product->rating}}</span>
                                         </p>
                                         
                                     </div>
@@ -195,19 +193,18 @@
                                 <div class="room-wrap">
                                     <a href="room.html" class="img" style="background-image: url(images/room-5.jpg);"></a>
                                     <div class="text pt-4 pl-lg-5">
-                                        <h2><a href="">{{$product[0]['name']}}</a></h2>
+                                        <h2><a href="{{route('details',[$product->id])}}">{{$product->name}}</a></h2>
                                         <p></p>
                                         <p class="d-flex price-details align-items-center pt-3">
-                                            Price ot 
+                                            ot {{$product->rooms->min('price')}} - do {{$product->rooms->max('price')}}
                                         </p>
                                         <p class="rate">
-                                         <span>{{$product[0]['rating']}}</span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star"></span>
                                             <span class="icon-star-half-full"></span>
-
+                                         <span>{{$product->rating}}</span>
                                         </p>
                                         
                                     </div>

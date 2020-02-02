@@ -6,32 +6,38 @@ use App\Product;
 use App\Product_type;
 use App\Room;
 use App\Comfort;
+use App\Room_type;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
     //
     public function index (Request $req){
-        $rooms  = Room::get();
-        $prods = [];
-        for ($i = 0; $i <= ($rooms->count()-1); $i++) {
-            array_push($prods,$rooms[$i]->products);
-        }
-    	return view('index',['products'=>array_unique($prods)]);
+        $products = Product::with('rooms')->get();
+        return view('index',['products'=>$products]);
     }
+    
     public function search(Request $req){
     	$first_price = $req->first_price;
     	$second_price = $req->second_price;
-        $rooms  = Room::where('price','<=',$second_price)->where('price','>=',$first_price)->get();
-    	$prods = [];
-    	for ($i = 0; $i <= ($rooms->count()-1); $i++) {
-    		array_push($prods,$rooms[$i]->products);
-    	}
-        $rooms_price=[];
-        for ($i = 0; $i <= ($rooms->count()-1); $i++) {
-            array_push($rooms_price,$prods[$i][0]->rooms[0]->price);
-        }
-       return view('index',['products'=>array_unique($prods)]);
+        $products = Product::with('rooms')->whereHas('rooms', function($q) use($first_price,$second_price) {
+            $q->whereBetween('price',[$first_price,$second_price]); 
+        })->get();        
+       return view('index',['products'=>$products]);
+    
+    }
+    //API
+    public function getProducts(){
+        $products = Product::with('rooms')->get();
+        return $products;   
+    }
+    public function searchProducts(Request $req){    
+        $first_price = $req->first_price;
+        $second_price = $req->second_price;
+        $products = Product::with('rooms')->whereHas('rooms', function($q) use($first_price,$second_price) {
+            $q->whereBetween('price',[$first_price,$second_price]); 
+        })->get();        
+       return $products;
     
     }
 }

@@ -19,17 +19,9 @@ class Product extends Model
     	return $this->belongsTo('App\City');
     }
 
-    public function ratings(){
-    	return $this->hasOne('App\Rating');
-    }
-
-
-    public function visits(){
-    	return $this->belongsTo('App\Visit');
-    }
 
     public function rooms(){
-    	return $this->belongsToMany('App\Room','pro_room','pro_id','room_id');
+    	return $this->hasMany('App\Room','pro_id','id');
     }
 
     public function comforts(){

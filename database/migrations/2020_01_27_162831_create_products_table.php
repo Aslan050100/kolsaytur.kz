@@ -26,7 +26,6 @@ class CreateProductsTable extends Migration
             $table->integer('visit');
             $table->timestamps();
             $table->foreign('product_type_id')->references('id')->on('product_types')->onDelete('cascade');
-            
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
             
         });

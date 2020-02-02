@@ -18,6 +18,7 @@ class CreateRoomsTable extends Migration
             $table->string('name', 100);
             $table->integer('price');
             $table->unsignedBigInteger('room_type_id');
+            $table->unsignedBigInteger('pro_id');
             $table->integer('quantity');
             $table->integer('children');
             $table->integer('animal');
@@ -25,6 +26,7 @@ class CreateRoomsTable extends Migration
             $table->string('image', 100);    
             $table->timestamps();
             $table->foreign('room_type_id')->references('id')->on('room_types')->onDelete('cascade');
+            $table->foreign('pro_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

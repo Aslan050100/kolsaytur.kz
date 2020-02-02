@@ -10,7 +10,7 @@ class Room_type extends Model
     protected $table = 'room_types';
 
     public function rooms(){
-    	return $this->hasMany('App\Room');
-    }
+    	return $this->hasMany('App\Room','room_type_id','id');
+    
 }
 }
