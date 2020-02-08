@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Room_type;
 use App\Room;
 use App\Order;
 use App\Ip;
@@ -62,7 +63,7 @@ class DetailsController extends Controller
         $order->children = $req->get('children');
         $order->room_type = $req->get('room_type');
         $order->save();
-        return redirect()->back()->with('alert', 'Data inserted!');
+        return 'Data inserted';
     }
 
 
@@ -84,7 +85,14 @@ class DetailsController extends Controller
     }
     public function getRoom_typesByid(Request $req,$id){
         $rooms = $this->getRoomsByid($id);
-        $room_types = $rooms->room_types; 
+        $room_types =[];
+        for($i=0; $i <=count($rooms)-1; $i++){
+            array_push($room_types,$rooms[$i]->room_types); 
+        }
+        return $rooms;
+    }
+    public function getRoom_types(){
+        $room_types = Room_type::get();
         return $room_types;
     }
 }

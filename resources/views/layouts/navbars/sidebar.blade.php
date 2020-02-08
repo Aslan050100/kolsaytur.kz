@@ -101,6 +101,41 @@
                                     {{ __('User Management') }}
                                 </a>
                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('product') }}">
+                                    {{ __('Product') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('city') }}">
+                                    {{ __('City') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('comfort') }}">
+                                    {{ __('Comfort') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('order') }}">
+                                    {{ __('Order') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('product_type') }}">
+                                    {{ __('Product_type') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('room') }}">
+                                    {{ __('Room') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('room_type') }}">
+                                    {{ __('Room_type') }}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>

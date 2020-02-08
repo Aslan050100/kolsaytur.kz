@@ -14,6 +14,8 @@ class MainController extends Controller
     //
     public function index (Request $req){
         $products = Product::with('rooms')->get();
+        //$pro = $products->sortByDesc('rating');
+        //$pro = $products->sortByDesc('visit');
         return view('index',['products'=>$products]);
     }
     
