@@ -31,7 +31,7 @@ class MainController extends Controller
     //API
     public function getProducts(){
         $products = Product::with('rooms')->get();
-        return $products;   
+        return response()->json($products);  
     }
     public function searchProducts(Request $req){    
         $first_price = $req->first_price;
@@ -39,7 +39,7 @@ class MainController extends Controller
         $products = Product::with('rooms')->whereHas('rooms', function($q) use($first_price,$second_price) {
             $q->whereBetween('price',[$first_price,$second_price]); 
         })->get();        
-       return $products;
+       return response()->json($products);
     
     }
 }

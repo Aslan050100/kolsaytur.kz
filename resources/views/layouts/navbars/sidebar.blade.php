@@ -26,7 +26,7 @@
                         <i class="ni ni-single-02"></i>
                         <span>{{ __('My profile') }}</span>
                     </a>
-                    <a href="#" class="dropdown-item">
+                    <!-- <a href="#" class="dropdown-item">
                         <i class="ni ni-settings-gear-65"></i>
                         <span>{{ __('Settings') }}</span>
                     </a>
@@ -37,7 +37,7 @@
                     <a href="#" class="dropdown-item">
                         <i class="ni ni-support-16"></i>
                         <span>{{ __('Support') }}</span>
-                    </a>
+                    </a> -->
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <!-- Form -->
-            <form class="mt-4 mb-3 d-md-none">
+            <!-- <form class="mt-4 mb-3 d-md-none">
                 <div class="input-group input-group-rounded input-group-merge">
                     <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="{{ __('Search') }}" aria-label="Search">
                     <div class="input-group-prepend">
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-            </form>
+            </form> -->
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -86,7 +86,7 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                         <i class="fab fa-laravel" style="color: #f4645f;"></i>
-                        <span class="nav-link-text" style="color: #f4645f;">{{ __('Laravel Examples') }}</span>
+                        <span class="nav-link-text" style="color: #f4645f;">{{ __('Database Tables') }}</span>
                     </a>
 
                     <div class="collapse show" id="navbar-examples">
@@ -140,7 +140,7 @@
                     </div>
                 </li>
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="ni ni-planet text-blue"></i> {{ __('Icons') }}
                     </a>
@@ -159,19 +159,19 @@
                     <a class="nav-link" href="#">
                         <i class="ni ni-circle-08 text-pink"></i> {{ __('Register') }}
                     </a>
-                </li>
-                <li class="nav-item mb-5" style="position: absolute; bottom: 0;">
+                </li> -->
+                <!-- <li class="nav-item mb-5" style="position: absolute; bottom: 0;">
                     <a class="nav-link" href="https://www.creative-tim.com/product/argon-dashboard-pro-laravel" target="_blank">
                         <i class="ni ni-cloud-download-95"></i> Upgrade to PRO
                     </a>
-                </li>
+                </li> -->
             </ul>
             <!-- Divider -->
-            <hr class="my-3">
+            <!-- <hr class="my-3"> -->
             <!-- Heading -->
-            <h6 class="navbar-heading text-muted">Documentation</h6>
+           <!--  <h6 class="navbar-heading text-muted">Documentation</h6> -->
             <!-- Navigation -->
-            <ul class="navbar-nav mb-md-3">
+            <!-- <ul class="navbar-nav mb-md-3">
                 <li class="nav-item">
                     <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html">
                         <i class="ni ni-spaceship"></i> Getting started
@@ -187,7 +187,7 @@
                         <i class="ni ni-ui-04"></i> Components
                     </a>
                 </li>
-            </ul>
+            </ul> -->
         </div>
     </div>
 </nav>
