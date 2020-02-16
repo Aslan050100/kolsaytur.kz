@@ -103,37 +103,37 @@
                             </li>
                              <li class="nav-item">
                                 <a class="nav-link" href="{{ route('product') }}">
-                                    {{ __('Product') }}
+                                    {{ __('Продукты') }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('city') }}">
-                                    {{ __('City') }}
+                                    {{ __('Городы') }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('comfort') }}">
-                                    {{ __('Comfort') }}
+                                    {{ __('Удобство') }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('order') }}">
-                                    {{ __('Order') }}
+                                    {{ __('Заказы') }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('product_type') }}">
-                                    {{ __('Product_type') }}
+                                    {{ __('Типы продуктов') }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('room') }}">
-                                    {{ __('Room') }}
+                                    {{ __('Комнаты') }}
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('room_type') }}">
-                                    {{ __('Room_type') }}
+                                    {{ __('Виды комнат') }}
                                 </a>
                             </li>
                         </ul>

@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('uniq_id');
+            $table->unsignedBigInteger('product_id');
             $table->date('check_in');
             $table->date('check_out');
             $table->string('name',100);
@@ -25,6 +25,7 @@ class CreateOrdersTable extends Migration
             $table->integer('children');
             $table->string('room_type');
             $table->timestamps();
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

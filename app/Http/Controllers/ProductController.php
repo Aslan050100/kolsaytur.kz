@@ -25,7 +25,17 @@ class ProductController extends Controller
     }
     
     public function store(Request $req){
-    	//dd($req->name);
+    	//dd($req->image);
+        request()->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+       ]);
+        if ($files = $req->image) {
+            //dd(123);
+           $destinationPath = 'assets/images';      // upload path
+           $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
+           $files->move($destinationPath, $profileImage);
+           $insert['image'] = "$profileImage";
+        }
     	$pro_type_id = Product_type::where('name',$req->product_type)->first();
     	$city_id = City::where('name',$req->city)->first();
     	$slug = $req->name;
@@ -54,6 +64,7 @@ class ProductController extends Controller
     	$product->product_type_id = $pro_type_id->id;
     	$product->city_id = $city_id->id;
     	$product->slug = $slug;	
+        $product->image = $profileImage;
     	$product->save();
     	return redirect()->back()->with('alert', 'Data inserted!');
     }
@@ -68,6 +79,7 @@ class ProductController extends Controller
     }
     public function update(Request $req,$id){
     	//dd($req);
+
         $slug = $req->name;
         $contains_cyrillic = (bool) preg_match('/[\p{Cyrillic}]/u', $slug);
         $slug = preg_replace('/\s+/', '', $slug);
@@ -88,17 +100,40 @@ class ProductController extends Controller
         }
     	$pro_type_id = Product_type::where('name',$req->product_type)->first();
     	$city_id = City::where('name',$req->city)->first();
-    	$product = Product::find($id);
-    	//dd($pro);
-    	$product->name = $req->name;
-    	$product->description = $req->desc;
-    	$product->map = $req->map;
-        $product->slug = $slug;
-    	$product->product_type_id = $pro_type_id->id;
-    	$product->city_id = $city_id->id;
-    	$product->save();
+        if ($files = $req->file('image')) {
+            //dd(123);
+           $destinationPath = 'assets/images';      // upload path
+           $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
+           $files->move($destinationPath, $profileImage);
+           $insert['image'] = "$profileImage";
+        }
+        if($req->file('image') == null){
+        	$product = Product::find($id);
+        	//dd($pro);
+        	$product->name = $req->name;
+        	$product->description = $req->desc;
+        	$product->map = $req->map;
+            $product->slug = $slug;
+        	$product->product_type_id = $pro_type_id->id;
+        	$product->city_id = $city_id->id;
+        	$product->save();
 
-    	return redirect()->back()->with('alert', 'Data updated!');
+    	    return redirect()->back()->with('alert', 'Data updated!');
+        }
+        else{
+            $product = Product::find($id);
+            //dd($pro);
+            $product->name = $req->name;
+            $product->description = $req->desc;
+            $product->map = $req->map;
+            $product->slug = $slug;
+            $product->product_type_id = $pro_type_id->id;
+            $product->city_id = $city_id->id;
+            $product->image = $profileImage;
+            $product->save();
+
+            return redirect()->back()->with('alert', 'Data updated!');
+        }
     }
     public function destroy($id){
     	$pro = Product::find($id);

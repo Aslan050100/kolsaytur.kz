@@ -12,10 +12,10 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">{{ __('Room types') }}</h3>
+                                <h3 class="mb-0">{{ __('Типы номеров') }}</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('room_type.create') }}" class="btn btn-sm btn-primary">{{ __('Add Room type') }}</a>
+                                <a href="{{ route('room_type.create') }}" class="btn btn-sm btn-primary">{{ __('Добавить тип номера') }}</a>
                             </div>
                         </div>
                     </div>
@@ -35,10 +35,10 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">{{ __('Name') }}</th>
-                                    <th scope="col">{{ __('Description') }}</th>
-                                    <th scope="col">{{ __('Creation Date') }}</th>
-                                    <th scope="col">{{ __('Update Date') }}</th>
+                                    <th scope="col">{{ __('Имя') }}</th>
+                                    <th scope="col">{{ __('Описания') }}</th>
+                                    <th scope="col">{{ __('Дата создания') }}</th>
+                                    <th scope="col">{{ __('Дата обновления') }}</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
@@ -59,9 +59,9 @@
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">                                                   
                                                         <form action="{{ route('room_type.destroy', $room_type->id) }}" method="post">
                                                             @csrf
-                                                            <a class="dropdown-item" href="{{ route('room_type.edit', $room_type->id) }}">{{ __('Edit') }}</a>
+                                                            <a class="dropdown-item" href="{{ route('room_type.edit', $room_type->id) }}">{{ __('Изменить') }}</a>
                                                             <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">
-                                                                {{ __('Delete') }}
+                                                                {{ __('Удалить') }}
                                                             </button>
                                                         </form>    
                                                    
