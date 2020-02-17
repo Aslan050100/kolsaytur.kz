@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  
 
 //Api
-Route::get('/getProducts','MainController@getProducts');
+Route::get('/getProducts','MainController@getProducts')->middleware('cors');
 Route::match(['get','post'],'/searchProducts','MainController@searchProducts');
 Route::get('/getProductByid/{id}','DetailsController@getProductByid');
 Route::get('/getComfortsByid/{id}','DetailsController@getComfortsByid');
