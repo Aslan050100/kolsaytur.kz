@@ -38,7 +38,7 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+	        	<li class="nav-item active"><a href="{{route('index')}}" class="nav-link">Домой</a></li>
 	        	
 	        </ul>
 	      </div>
@@ -49,9 +49,9 @@
     <section class="hero-wrap d-flex js-fullheight">
     	<div class="forth js-fullheight d-flex align-items-center">
     		<div class="text">
-    			<h2>Welcome to Kolsay</h2>
-    			<h1 class="mb-5">A Perfect Place To Stay</h1>
-    			<p><a href="#" class="btn-custom py-3 pr-2">Make A Booking</a></p>
+    			<h2>Добро пожаловать в Кольсай</h2>
+    			<h1 class="mb-5">Идеальное место для отдыха</h1>
+    			<p><a href="#" class="btn-custom py-3 pr-2">Сделать заказ</a></p>
     		</div>
     	</div>
     	<div class="third js-fullheight">
@@ -84,7 +84,7 @@
     	<div class="container">
     		<div class="row justify-content-center mb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Discover</span>
+          	<span class="subheading">Находить</span>
             <h2 class="mb-4">НАЙДИТЕ ЖИЛЬЕ В Kolsay ВМЕСТЕ С KOLSAYTUR.KZ</h2>
             <form action="{{route('search')}}" method="post"  enctype="multipart/form-data">
               {{ csrf_field() }}
@@ -231,7 +231,7 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  Авторское право &copy;<script>document.write(new Date().getFullYear());</script>  Все права защищены | Этот сайт сделал <i class="icon-heart" aria-hidden="true"></i> <a href="https://colorlib.com" target="_blank">Onmonday</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>

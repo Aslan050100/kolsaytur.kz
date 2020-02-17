@@ -31,7 +31,8 @@ class DetailsController extends Controller
     	$product = Product::where('id',$id)->first();
     	$comforts = $product->comforts;
         $rooms = $product->rooms;
-        return view('details',['product'=>$product,'comforts'=>$comforts,'rooms'=>$rooms]);
+        $room_types = Room_type::all();
+        return view('details',['product'=>$product,'comforts'=>$comforts,'rooms'=>$rooms,'room_types'=>$room_types]);
     }
 
     public function addOrder(Request $req,$pro_id){

@@ -33,12 +33,12 @@
 	    <div class="container">
 	      <a class="navbar-brand" href="{{route('index')}}">Kolsaytur</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
+	        <span class="oi oi-menu"></span> Меню
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+	        	<li class="nav-item active"><a href="{{route('index')}}" class="nav-link">Домой</a></li>
 	        	
 	        </ul>
 	      </div>
@@ -50,7 +50,7 @@
     	<div class="forth js-fullheight d-flex align-items-center">
     		<div class="text">
 
-    			<h2>Welcome to  {{$product->name}}</h2>
+    			<h2>Добро пожаловать в {{$product->name}}</h2>
     			<h1 class="mb-5"> {{$product->name}} </h1>
     			<p>{{$product->description}}</p>
     		</div>
@@ -81,18 +81,18 @@
     	<div class="container">
     		<div class="row align-items-center">
     			<div class="col-lg text-lg-right">
-    				<h3 class="mb-4 mb-lg-0">Reserve A Perfect Room</h3>
+    				<h3 class="mb-4 mb-lg-0">Забронировать идеальный номер</h3>
     			</div>
     			<div class="col-lg-10">
 	    			<form action="{{route('addOrder',[$product->id])}}" class="booking-form">
 	    				{{@csrf_field()}}
 	    				<div class="d-lg-flex align-items-md-end">
 		    				<div class="form-group mb-3 mb-lg-0 mr-4">
-		    					<label for="#">Check-in Date</label>
+		    					<label for="#">Дата заезда</label>
 		    					<input type="text" name='checkin' class="form-control checkin_date" placeholder="Check-in date" required>
 		    				</div>
 		    				<div class="form-group mb-3 mb-lg-0 mr-4">
-		    					<label for="#">Check-out Date</label>
+		    					<label for="#">Дата выезда</label>
 		    					<input type="text" name='checkout' class="form-control checkout_date" placeholder="Check-out date" required>
 		    				</div>
                             <div class="form-group mb-3 mb-lg-0 mr-4">
@@ -110,23 +110,21 @@
                               
                           </div>
 		    				<div class="form-group mb-3 mb-lg-0 mr-4">
-	      					<label for="#">Room Types</label>
+	      					<label for="#">Типы номеров</label>
 	      					<div class="form-field">
 	        					<div class="select-wrap">
 	                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
 	                    <select name="room_type" id="" class="form-control">
 	                    	<option value="">Suite</option>
-	                      <option value="Family">Family Room</option>
-	                      <option value="Deluxe">Deluxe Room</option>
-	                      <option value="Classic">Classic Room</option>
-	                      <option value="Superior">Superior Room</option>
-	                      <option value="Luxury">Luxury Room</option>
+	                      @foreach($room_types as $room_type)
+                           <option value="{{$room_type->name}}">{{$room_type->name}}</option>
+                        @endforeach
 	                    </select>
 	                  </div>
 		              </div>
 	              </div>
 		    				<div class="form-group mb-3 mb-lg-0 mr-4">
-	      					<label for="#">Adults</label>
+	      					<label for="#">Взрослые люди</label>
 	      					<div class="form-field">
 	        					<div class="select-wrap">
 	                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
@@ -141,7 +139,7 @@
 		              </div>
 	              </div>
 		    				<div class="form-group mb-3 mb-lg-0 mr-4">
-	      					<label for="#">Children</label>
+	      					<label for="#">Дети</label>
 	      					<div class="form-field">
 	        					<div class="select-wrap">
 	                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
@@ -166,7 +164,7 @@
     </section>
 
     <section class="ftco-booking">
-    	<h2>Comforts</h2>
+    	<h2>Комфорты</h2>
     	@foreach($comforts as $comfort)
     	<div style="border: 1px solid red;">
     		<img src="img/{{$comfort['icon']}}">
@@ -177,7 +175,7 @@
     </section>
 
       <section class="ftco-booking">
-    	<h2>Rooms</h2>
+    	<h2>Комнаты</h2>
     	@foreach($rooms as $room)
     	<div style="border: 1px solid red;">
     		<img src="img/{{$comfort['image']}}">	
