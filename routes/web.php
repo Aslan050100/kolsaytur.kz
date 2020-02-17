@@ -73,4 +73,11 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('room_typeEdit/{id}',['as'=>'room_type.edit','uses'=>'RoomTypeController@edit']);
 	Route::post('room_typeStore',['as'=>'room_type.store','uses'=>'RoomTypeController@store']);
 	Route::match(['post','get'],'room_typeUpdate/{id}',['as'=>'room_type.update','uses'=>'RoomTypeController@update']);
+	//Product and comfort
+	Route::get('pro_com',['as'=>'pro_com','uses'=>'ProductComfortController@index']);
+	Route::get('pro_comCreate',['as'=>'pro_com.create','uses'=>'ProductComfortController@create']);
+	Route::match(['get','post'],'pro_comDestroy/{pro_id}/{com_id}',['as'=>'pro_com.destroy','uses'=>'ProductComfortController@destroy']);
+	//Route::get('pro_comEdit/{id}',['as'=>'pro_com.edit','uses'=>'ProductComfortController@edit']);
+	Route::post('pro_comStore',['as'=>'pro_com.store','uses'=>'ProductComfortController@store']);
+	//Route::match(['post','get'],'pro_comUpdate/{id}',['as'=>'pro_com.update','uses'=>'ProductComfortController@update']);
 });

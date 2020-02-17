@@ -19,8 +19,7 @@ class CreateProductComfortTable extends Migration
             $table->unsignedBigInteger('com_id');
             $table->foreign('pro_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('com_id')->references('id')->on('comforts')->onDelete('cascade');
-            
-            
+            $table->timestamps();
         });
     }
 
