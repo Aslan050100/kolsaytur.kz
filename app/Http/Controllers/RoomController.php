@@ -9,6 +9,7 @@ use App\City;
 use App\Room;
 use App\Comfort;
 use App\Room_type;
+use App\Pro_com;
 
 class RoomController extends Controller
 {
@@ -47,6 +48,7 @@ class RoomController extends Controller
     	$room->smoke = $req->smoke;
     	$room->image = $profileImage;
     	$room->save();
+
     	return redirect()->back()->with('alert', 'Data inserted!');
     }
 
