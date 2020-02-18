@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use App\Http\Resources\Product as ProductResource;
+
 use App\Product;
 use App\Room_type;
 use App\Room;
@@ -70,27 +73,7 @@ class DetailsController extends Controller
 
     public function getProductByid($id){
         $product = Product::where('id',$id)->first();
-        return $product;
-    }
-
-    public function getComfortsByid($id){
-        $product = Product::where('id',$id)->first();
-        $comforts = $product->comforts;
-        return $comforts;
-    }
-
-    public function getRoomsByid($id){
-        $product = Product::with('rooms')->where('id',$id)->first();
-        $rooms = $product->rooms;
-        return $rooms;
-    }
-    public function getRoom_typesByid(Request $req,$id){
-        $rooms = $this->getRoomsByid($id);
-        $room_types =[];
-        for($i=0; $i <=count($rooms)-1; $i++){
-            array_push($room_types,$rooms[$i]->room_types); 
-        }
-        return $rooms;
+        return new ProductResource($product);  
     }
     public function getRoom_types(){
         $room_types = Room_type::get();

@@ -9,7 +9,7 @@ class Room extends Model
     //
     protected $table = 'rooms';
 
-    public function room_types(){
+    public function room_type(){
     	return $this->belongsTo('App\Room_type','room_type_id','id');
     }
 

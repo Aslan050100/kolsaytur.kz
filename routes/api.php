@@ -22,8 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/getProducts','MainController@getProducts')->middleware('cors');
 Route::match(['get','post'],'/searchProducts','MainController@searchProducts')->middleware('cors');
 Route::get('/getProductByid/{id}','DetailsController@getProductByid')->middleware('cors');
-Route::get('/getComfortsByid/{id}','DetailsController@getComfortsByid')->middleware('cors');
-//Route::get('/getRoomsByid/{id}','DetailsController@getRoomsByid');
-Route::get('/getRoom_typesByid/{id}','DetailsController@getRoom_typesByid')->middleware('cors');
 Route::post('/addOrder1/{id}','DetailsController@addOrder1')->middleware('cors');
 Route::get('/getRoom_types','DetailsController@getRoom_types')->middleware('cors');
