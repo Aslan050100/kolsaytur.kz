@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Resources\Product as ProductResource;
+use App\Http\Resources\RoomType as RoomTypeResource;
 
 use App\Product;
 use App\Room_type;
@@ -77,6 +78,6 @@ class DetailsController extends Controller
     }
     public function getRoom_types(){
         $room_types = Room_type::get();
-        return $room_types;
+        return RoomTypeResource::collection($room_types);  
     }
 }

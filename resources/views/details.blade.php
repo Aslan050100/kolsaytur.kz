@@ -183,8 +183,7 @@
     		<h4>{{$room['name']}}</h4>	
     		Price
     		<h4>{{$room['price']}}</h4>
-    		Room type
-    		<h4>{{$room->room_types->name}}</h4>
+    		
     	</div>
     	@endforeach
     </section>

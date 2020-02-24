@@ -8,7 +8,6 @@ class Product extends Model
 {
     //
     protected $table = 'products';
-    protected $dates = ['created_at'];
 
 
     public function product_types(){

@@ -8,6 +8,7 @@ use App\Room;
 use App\Comfort;
 use App\Room_type;
 use Illuminate\Http\Request;
+use App\Http\Resources\MainProduct as MainProductResource;
 
 class MainController extends Controller
 {
@@ -30,8 +31,9 @@ class MainController extends Controller
     }
     //API
     public function getProducts(){
-        $products = Product::with('rooms')->get();
-        return response()->json($products);  
+        $products = Product::all();
+        //dd($products);
+        return MainProductResource::collection($products);
     }
     public function searchProducts(Request $req){    
         $first_price = $req->first_price;
@@ -39,7 +41,7 @@ class MainController extends Controller
         $products = Product::with('rooms')->whereHas('rooms', function($q) use($first_price,$second_price) {
             $q->whereBetween('price',[$first_price,$second_price]); 
         })->get();        
-       return response()->json($products);
+       return MainProductResource::collection($products);
     
     }
 }
