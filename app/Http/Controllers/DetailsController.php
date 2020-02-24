@@ -80,4 +80,21 @@ class DetailsController extends Controller
         $room_types = Room_type::get();
         return RoomTypeResource::collection($room_types);  
     }
+    public function checkIp($id){
+        $client_ip = $_SERVER['REMOTE_ADDR'];
+        $qwe = Ip::where('pro_id',$id)->first();
+        if(is_null($qwe)){
+            $ip = new Ip;
+            $ip->pro_id = $id;
+            $ip->ip = $client_ip;
+            $ip->save();
+            $visit = Product::where('id',$id)->first();
+            $new_visit = $visit['visit']+1;
+            $pro  = Product::find($id);
+            if($pro){
+                $pro->visit = $new_visit;
+                $pro->save();
+            }
+        }
+    }
 }
