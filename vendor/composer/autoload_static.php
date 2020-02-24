@@ -124,6 +124,7 @@ class ComposerStaticInit65cd303be8e1850cfbaed2636731b20b
         ),
         'F' => 
         array (
+            'Fruitcake\\Cors\\' => 15,
             'Fideloper\\Proxy\\' => 16,
             'Faker\\' => 6,
             'Facade\\Ignition\\' => 16,
@@ -149,6 +150,7 @@ class ComposerStaticInit65cd303be8e1850cfbaed2636731b20b
         ),
         'A' => 
         array (
+            'Asm89\\Stack\\' => 12,
             'App\\' => 4,
         ),
     );
@@ -360,6 +362,10 @@ class ComposerStaticInit65cd303be8e1850cfbaed2636731b20b
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
+        'Fruitcake\\Cors\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fruitcake/laravel-cors/src',
+        ),
         'Fideloper\\Proxy\\' => 
         array (
             0 => __DIR__ . '/..' . '/fideloper/proxy/src',
@@ -411,6 +417,10 @@ class ComposerStaticInit65cd303be8e1850cfbaed2636731b20b
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'Asm89\\Stack\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack',
         ),
         'App\\' => 
         array (
@@ -466,7 +476,6 @@ class ComposerStaticInit65cd303be8e1850cfbaed2636731b20b
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
-        'App\\Http\\Middleware\\Cors' => __DIR__ . '/../..' . '/app/Http/Middleware/Cors.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
@@ -495,6 +504,8 @@ class ComposerStaticInit65cd303be8e1850cfbaed2636731b20b
         'App\\Room_type' => __DIR__ . '/../..' . '/app/Room_type.php',
         'App\\Rules\\CurrentPasswordCheckRule' => __DIR__ . '/../..' . '/app/Rules/CurrentPasswordCheckRule.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
+        'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
         'Carbon\\CarbonInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterface.php',
@@ -1237,6 +1248,8 @@ class ComposerStaticInit65cd303be8e1850cfbaed2636731b20b
         'Faker\\ValidGenerator' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/ValidGenerator.php',
         'Fideloper\\Proxy\\TrustProxies' => __DIR__ . '/..' . '/fideloper/proxy/src/TrustProxies.php',
         'Fideloper\\Proxy\\TrustedProxyServiceProvider' => __DIR__ . '/..' . '/fideloper/proxy/src/TrustedProxyServiceProvider.php',
+        'Fruitcake\\Cors\\CorsServiceProvider' => __DIR__ . '/..' . '/fruitcake/laravel-cors/src/CorsServiceProvider.php',
+        'Fruitcake\\Cors\\HandleCors' => __DIR__ . '/..' . '/fruitcake/laravel-cors/src/HandleCors.php',
         'GuzzleHttp\\Psr7\\AppendStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/AppendStream.php',
         'GuzzleHttp\\Psr7\\BufferStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/BufferStream.php',
         'GuzzleHttp\\Psr7\\CachingStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/CachingStream.php',
@@ -4593,11 +4606,11 @@ class ComposerStaticInit65cd303be8e1850cfbaed2636731b20b
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Deprecated' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Deprecated.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Example' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Example.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Factory\\StaticMethod' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Factory/StaticMethod.php',
-        'phpDocumentor\\Reflection\\DocBlock\\Tags\\Factory\\Strategy' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Factory/Strategy.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Formatter' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Formatter\\AlignFormatter' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter/AlignFormatter.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Formatter\\PassthroughFormatter' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter/PassthroughFormatter.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Generic' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Generic.php',
+        'phpDocumentor\\Reflection\\DocBlock\\Tags\\InvalidTag' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/InvalidTag.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Link' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Link.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Method' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Method.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Param' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Param.php',
