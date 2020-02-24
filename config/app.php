@@ -176,7 +176,6 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Intervention\Image\ImageServiceProvider::class,
-        Spatie\Cors\CorsServiceProvider::class,
     ],
 
     /*
