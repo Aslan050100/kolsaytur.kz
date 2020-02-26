@@ -22,7 +22,7 @@ class Room extends JsonResource
             'children'=>$this->children,
             'animal'=>$this->animal,
             'smoke'=>$this->smoke,
-            'image'=>$this->image,
+            'image'=>$this->image_url,
             'room_type'=>new RoomTypeResource($this->room_type),
         ];
     }

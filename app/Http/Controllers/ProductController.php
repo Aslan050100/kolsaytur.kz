@@ -104,6 +104,7 @@ class ProductController extends Controller
         if ($files = $req->file('image')) {
             //dd(123);
            $destinationPath = 'assets/images';      // upload path
+            $path = 'https://sirius.onmonday.kz/assets/images/';
            $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
            $files->move($destinationPath, $profileImage);
            $insert['image'] = "$profileImage";
@@ -130,7 +131,7 @@ class ProductController extends Controller
             $product->slug = $slug;
             $product->product_type_id = $pro_type_id->id;
             $product->city_id = $city_id->id;
-            $product->image = $profileImage;
+            $product->image = $path . $profileImage;
             $product->save();
 
             return redirect()->back()->with('alert', 'Data updated!');

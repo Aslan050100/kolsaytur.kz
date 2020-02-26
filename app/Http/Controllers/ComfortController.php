@@ -23,7 +23,7 @@ class ComfortController extends Controller
     {
         return view('admin.comfort_create');
     }
-    
+
     public function store(Request $req){
     	//dd($req);
     	request()->validate([
@@ -32,6 +32,7 @@ class ComfortController extends Controller
     	//dd($req->file('icon'));
     	if ($files = $req->file('icon')) {
            $destinationPath = 'assets/images';  	// upload path
+            $path = 'https://sirius.onmonday.kz/assets/images/';
            $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
            $files->move($destinationPath, $profileImage);
            $insert['icon'] = "$profileImage";
@@ -40,7 +41,7 @@ class ComfortController extends Controller
      	$comfort = new Comfort;
     	$comfort->name = $req->name;
     	$comfort->description = $req->desc;
-    	$comfort->icon = $profileImage;
+    	$comfort->icon = $path . $profileImage;
     	$comfort->save();
     	return redirect()->back()->with('alert', 'Data inserted!');
     }
@@ -52,6 +53,7 @@ class ComfortController extends Controller
     public function update(Request $req,$id){
     	if ($files = $req->file('icon')) {
            $destinationPath = 'assets/images';    // upload path
+            $path = 'https://sirius.onmonday.kz/assets/images/';
            $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
            $files->move($destinationPath, $profileImage);
            $insert['icon'] = "$profileImage";
@@ -69,16 +71,16 @@ class ComfortController extends Controller
           $comfort = Comfort::find($id);
           $comfort->name = $req->name;
           $comfort->description = $req->desc;
-          $comfort->icon = $profileImage;
+          $comfort->icon = $path . $profileImage;
           $comfort->save();
           return redirect()->back()->with('alert', 'Data updated!');
         }
-    	
+
     }
     public function destroy($id){
     	$comfort = Comfort::find($id);
     	$comfort->delete();
     	return redirect()->back()->with('Product deleted');
-    	
+
     }
 }

@@ -25,7 +25,7 @@ class RoomController extends Controller
     	$products = Product::all();
         return view('admin.room_create',['room_types'=>$room_types,'products'=>$products]);
     }
-    
+
     public function store(Request $req){
     	//dd($req);
     	request()->validate([
@@ -33,6 +33,7 @@ class RoomController extends Controller
        ]);
     	if ($files = $req->file('image')) {
            $destinationPath = 'assets/images';  	// upload path
+            $path = 'https://sirius.onmonday.kz/assets/images/';
            $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
            $files->move($destinationPath, $profileImage);
            $insert['image'] = "$profileImage";
@@ -46,7 +47,7 @@ class RoomController extends Controller
     	$room->children = $req->children;
     	$room->animal = $req->animal;
     	$room->smoke = $req->smoke;
-    	$room->image = $profileImage;
+    	$room->image = $path . $profileImage;
     	$room->save();
 
     	return redirect()->back()->with('alert', 'Data inserted!');
@@ -64,15 +65,16 @@ class RoomController extends Controller
     	return view('admin.room_edit',['room'=>$room,'room_types'=>$room_types,'products'=>$products,'pro_name'=>$pro_name,'room_type_name'=>$room_type_name]);
     }
     public function update(Request $req,$id){
-    	
+
     	if ($files = $req->file('image')) {
     		//dd(123);
            $destinationPath = 'assets/images';  	// upload path
+            $path = 'https://sirius.onmonday.kz/assets/images/';
            $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
            $files->move($destinationPath, $profileImage);
            $insert['image'] = "$profileImage";
         }
-        
+
         if($req->file('image') == null){
         	//dd(123);
         	$room = Room::find($id);
@@ -85,7 +87,7 @@ class RoomController extends Controller
 	    	$room->children = $req->children;
 	    	$room->animal = $req->animal;
 	    	$room->smoke = $req->smoke;
-	    	
+
 	    	$room->save();
 	    	return redirect()->back()->with('alert', 'Data updated!');
 	        }
@@ -100,8 +102,8 @@ class RoomController extends Controller
 	    	$room->children = $req->children;
 	    	$room->animal = $req->animal;
 	    	$room->smoke = $req->smoke;
-	    	$room->image = $profileImage;
-	    	$room->save();    
+	    	$room->image = $path . $profileImage;
+	    	$room->save();
 	    	return redirect()->back()->with('alert', 'Data updated!');
 	    }
     }
@@ -109,6 +111,6 @@ class RoomController extends Controller
     	$room = Room::find($id);
     	$room->delete();
     	return redirect()->back()->with('Product deleted');
-    	
+
     }
 }

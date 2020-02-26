@@ -17,4 +17,12 @@ class Room extends Model
     public function product(){
     	return $this->belongsTo('App\Product','pro_id','id');
     }
+    public function getImageUrlAttribute(): string
+    {
+        $image_url = $this->image;
+        if ( strpos($image_url, 'http') === 0) {
+            return $image_url;
+        }
+        return "https://sirius.onmonday.kz/assets/images/".$image_url;
+    }
 }
