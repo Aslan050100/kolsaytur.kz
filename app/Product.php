@@ -27,4 +27,14 @@ class Product extends Model
     public function comforts(){
     	return $this->belongsToMany('App\Comfort','pro_com','pro_id','com_id');
     }
+
+
+    public function getImageUrlAttribute(): string
+    {
+        $image_url = $this->image;
+        if ( strpos($image_url, 'http') === 0) {
+            return $image_url;
+        }
+        return "https://sirius.onmonday.kz/assets/images/".$image_url;
+    }
 }

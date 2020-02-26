@@ -32,7 +32,7 @@ class ProductController extends Controller
         if ($files = $req->image) {
             //dd(123);
            $destinationPath = 'assets/images';      // upload path
-            $path = 'assets/images/';
+            $path = 'https://sirius.onmonday.kz/assets/images/';
            $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
            $files->move($destinationPath, $profileImage);
            $insert['image'] = "$profileImage";

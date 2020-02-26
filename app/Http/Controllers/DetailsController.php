@@ -74,7 +74,6 @@ class DetailsController extends Controller
 
     public function getProductByid($id){
         $product = Product::where('id',$id)->first();
-        //dd($product);
         return new ProductResource($product);
     }
     public function getRoom_types(){
