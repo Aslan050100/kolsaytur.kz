@@ -27,8 +27,7 @@ class Product extends JsonResource
             'image' => $this->image_url,
             'comforts' => ComfortResource::collection($this->comforts),
             'rooms'=>RoomResource::collection($this->rooms),
-            'max_price'=>$this->rooms->max('price'),
-            'min_price'=>$this->rooms->min('price'),
+
         ];
     }
 }

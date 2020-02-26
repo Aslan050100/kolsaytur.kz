@@ -23,8 +23,10 @@ class MainProduct extends JsonResource
             'map' => $this->map,
             'rating' => $this->rating,
             'visit' => $this->visit,
-            'image' => $this->image,   
+            'image' => $this->image,
             'rooms'=>MainRoomResource::collection($this->rooms),
+            'max_price'=>$this->rooms->max('price'),
+            'min_price'=>$this->rooms->min('price'),
         ];
     }
 }
