@@ -55,7 +55,7 @@ class DetailsController extends Controller
     	return redirect()->back()->with('alert', 'Data inserted!');
     }
 //Api
-    //http://localhost/kolsaytur.kz/public/api/addOrder1/1?checkin=1/16/2020&checkout=1/16/2020&name=aslan&email=Aslan@qweq&phone=87089429592&adults=1&children=1&room_type=lux 
+    //http://localhost/kolsaytur.kz/public/api/addOrder1/1?checkin=1/16/2020&checkout=1/16/2020&name=aslan&email=Aslan@qweq&phone=87089429592&adults=1&children=1&room_type=lux
     public function addOrder1(Request $req,$pro_id){
         $order = new Order;
         $order->product_id = $pro_id;
@@ -74,11 +74,12 @@ class DetailsController extends Controller
 
     public function getProductByid($id){
         $product = Product::where('id',$id)->first();
-        return new ProductResource($product);  
+        //dd($product);
+        return new ProductResource($product);
     }
     public function getRoom_types(){
         $room_types = Room_type::get();
-        return RoomTypeResource::collection($room_types);  
+        return RoomTypeResource::collection($room_types);
     }
     public function checkIp($id){
         $client_ip = $_SERVER['REMOTE_ADDR'];

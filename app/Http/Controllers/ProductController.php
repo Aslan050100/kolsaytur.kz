@@ -32,7 +32,8 @@ class ProductController extends Controller
         if ($files = $req->image) {
             //dd(123);
            $destinationPath = 'assets/images';      // upload path
-           $profileImage = 'assets/images/' . date('YmdHis') . "." . $files->getClientOriginalExtension();
+            $path = 'assets/images/';
+           $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
            $files->move($destinationPath, $profileImage);
            $insert['image'] = "$profileImage";
         }
@@ -64,7 +65,7 @@ class ProductController extends Controller
     	$product->product_type_id = $pro_type_id->id;
     	$product->city_id = $city_id->id;
     	$product->slug = $slug;
-        $product->image = $profileImage;
+        $product->image = $path . $profileImage;
     	$product->save();
     	return redirect()->back()->with('alert', 'Data inserted!');
     }
