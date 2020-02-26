@@ -23,7 +23,7 @@ class ProductController extends Controller
     	//dd($pro_types);
         return view('admin.product_create',['pro_types'=>$pro_types,'cities'=>$cities]);
     }
-    
+
     public function store(Request $req){
     	//dd($req->image);
         request()->validate([
@@ -32,7 +32,7 @@ class ProductController extends Controller
         if ($files = $req->image) {
             //dd(123);
            $destinationPath = 'assets/images';      // upload path
-           $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
+           $profileImage = 'assets/images/' . date('YmdHis') . "." . $files->getClientOriginalExtension();
            $files->move($destinationPath, $profileImage);
            $insert['image'] = "$profileImage";
         }
@@ -54,7 +54,7 @@ class ProductController extends Controller
 	            'A','B','V','G','D','E','Io','Zh','Z','I','Y','K','L','M','N','O','P',
 	            'R','S','T','U','F','H','Ts','Ch','Sh','Sht','A','I','Y','e','Yu','Ya'
 	        ];
-	        $slug = str_replace($cyr,$lat, $slug);	
+	        $slug = str_replace($cyr,$lat, $slug);
 	    }
     	//dd($req);
      	$product = new Product;
@@ -63,7 +63,7 @@ class ProductController extends Controller
     	$product->map = $req->map;
     	$product->product_type_id = $pro_type_id->id;
     	$product->city_id = $city_id->id;
-    	$product->slug = $slug;	
+    	$product->slug = $slug;
         $product->image = $profileImage;
     	$product->save();
     	return redirect()->back()->with('alert', 'Data inserted!');
@@ -74,7 +74,7 @@ class ProductController extends Controller
     	$pro_type = Product_type::where('id',$product->product_type_id)->first();
     	$city = City::where('id',$product->city_id)->first();
     	$pro_types = Product_type::get();
-    	$cities = City::get();	
+    	$cities = City::get();
     	return view('admin.product_edit',['product'=>$product,'pro_type'=>$pro_type,'city'=>$city,'pro_types'=>$pro_types,'cities'=>$cities]);
     }
     public function update(Request $req,$id){
@@ -96,7 +96,7 @@ class ProductController extends Controller
                 'A','B','V','G','D','E','Io','Zh','Z','I','Y','K','L','M','N','O','P',
                 'R','S','T','U','F','H','Ts','Ch','Sh','Sht','A','I','Y','e','Yu','Ya'
             ];
-            $slug = str_replace($cyr,$lat, $slug);  
+            $slug = str_replace($cyr,$lat, $slug);
         }
     	$pro_type_id = Product_type::where('name',$req->product_type)->first();
     	$city_id = City::where('name',$req->city)->first();
@@ -139,7 +139,7 @@ class ProductController extends Controller
     	$pro = Product::find($id);
     	$pro->delete();
     	return redirect()->back()->with('Product deleted');
-    	
+
     }
 
 }
