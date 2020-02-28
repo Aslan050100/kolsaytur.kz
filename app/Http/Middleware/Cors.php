@@ -20,6 +20,7 @@ class Cors
         $headers = [
             'Access-Control-Allow-Methods' => '*',
             'Access-Control-Allow-Headers' => '*',
+            'Access-Control-Allow-Origin' => '*',
         ];
         if ($request->getMethod() == "OPTIONS"){
             //The client-side application can set only headers allowed in Access-Control-Allow-Headers
