@@ -14,46 +14,6 @@ use App\Order;
 use App\Ip;
 class DetailsController extends Controller
 {
-    //
-    public function index(Request $request,$id){
-    	//$client_ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-        $client_ip = $_SERVER['REMOTE_ADDR'];
-        $qwe = Ip::where('pro_id',$id)->first();
-        if(is_null($qwe)){
-            $ip = new Ip;
-            $ip->pro_id = $id;
-            $ip->ip = $client_ip;
-            $ip->save();
-            $visit = Product::where('id',$id)->first();
-            $new_visit = $visit['visit']+1;
-            $pro  = Product::find($id);
-            if($pro){
-                $pro->visit = $new_visit;
-                $pro->save();
-            }
-        }
-    	$product = Product::where('id',$id)->first();
-    	$comforts = $product->comforts;
-        $rooms = $product->rooms;
-        $room_types = Room_type::all();
-        return view('details',['product'=>$product,'comforts'=>$comforts,'rooms'=>$rooms,'room_types'=>$room_types]);
-    }
-
-    public function addOrder(Request $req,$pro_id){
-    	//dd($pro_id);
-    	$order = new Order;
-    	$order->product_id = $pro_id;
-    	$order->check_in = $req->input('checkin');
-    	$order->check_out = $req->input('checkout');
-    	$order->name = $req->input('name');
-    	$order->email = $req->input('email');
-    	$order->phone_number = $req->input('phone');
-    	$order->adults = $req->get('adults');
-    	$order->children = $req->get('children');
-    	$order->room_type = $req->get('room_type');
-    	$order->save();
-    	return redirect()->back()->with('alert', 'Data inserted!');
-    }
 //Api
     public function addOrder1(Request $req){
         $order = new Order;
@@ -94,5 +54,6 @@ class DetailsController extends Controller
                 $pro->save();
             }
         }
+        return 'Changed';
     }
 }
