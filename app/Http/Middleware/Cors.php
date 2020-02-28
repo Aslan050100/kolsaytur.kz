@@ -15,12 +15,12 @@ class Cors
      */
     public function handle($request, Closure $next)
     {
-
         //ALLOW OPTIONS METHOD
         $headers = [
             'Access-Control-Allow-Methods' => 'POST,GET,OPTIONS,PUT,DELETE',
-            'Access-Control-Allow-Headers' => 'Content-Type, X-Auth-Token, Origin, Authorization',
             'Access-Control-Allow-Origin' => '*',
+            "X-Requested-With"=> "XMLHttpRequest",
+            'Access-Control-Allow-Headers' => 'Content-Type, X-Auth-Token, Origin, Authorization,X-Requested-With',
         ];
         if ($request->getMethod() == "OPTIONS"){
             //The client-side application can set only headers allowed in Access-Control-Allow-Headers
