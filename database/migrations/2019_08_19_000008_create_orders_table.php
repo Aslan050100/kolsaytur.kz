@@ -22,10 +22,10 @@ class CreateOrdersTable extends Migration
             $table->string('email',100);
             $table->string('phone_number',100);
             $table->integer('adults');
-            $table->integer('children');
-            $table->string('room_type');
+            $table->unsignedBigInteger('room_id');
             $table->timestamps();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade');
         });
     }
 

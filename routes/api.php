@@ -16,12 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
- 
+
 
 //Api
 Route::get('/getProducts','MainController@getProducts')->middleware('cors');
 Route::match(['get','post'],'/searchProducts','MainController@searchProducts')->middleware('cors');
 Route::match(['get','post'],'/getProductByid/{id}','DetailsController@getProductByid')->middleware('cors');
-Route::match(['get','post'],'/addOrder1/{id}','DetailsController@addOrder1')->middleware('cors');
+Route::match(['get','post'],'/addOrder1','DetailsController@addOrder1')->middleware('cors');
 Route::get('/getRoom_types','DetailsController@getRoom_types')->middleware('cors');
 Route::match(['get','post'],'/checkIp/{id}','DetailsController@checkIp')->middleware('cors');

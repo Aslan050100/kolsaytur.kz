@@ -55,18 +55,16 @@ class DetailsController extends Controller
     	return redirect()->back()->with('alert', 'Data inserted!');
     }
 //Api
-    //http://localhost/kolsaytur.kz/public/api/addOrder1/1?checkin=1/16/2020&checkout=1/16/2020&name=aslan&email=Aslan@qweq&phone=87089429592&adults=1&children=1&room_type=lux
-    public function addOrder1(Request $req,$pro_id){
+    public function addOrder1(Request $req){
         $order = new Order;
-        $order->product_id = $pro_id;
+        $order->product_id = $req->get('pro_id');
         $order->check_in = $req->input('checkin');
         $order->check_out = $req->input('checkout');
         $order->name = $req->input('name');
         $order->email = $req->input('email');
         $order->phone_number = $req->input('phone');
         $order->adults = $req->get('adults');
-        $order->children = $req->get('children');
-        $order->room_type = $req->get('room_type');
+        $order->room_id = $req->get('room_id');
         $order->save();
         return 'Data inserted';
     }

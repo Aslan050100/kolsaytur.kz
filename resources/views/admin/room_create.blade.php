@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => __('Room Management')])
+    @extends('layouts.app', ['title' => __('Room Management')])
 
 @section('content')
     @include('users.partials.header', ['title' => __('Добавить комнату')])   

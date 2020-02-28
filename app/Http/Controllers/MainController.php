@@ -19,29 +19,29 @@ class MainController extends Controller
         //$pro = $products->sortByDesc('visit');
         return view('index',['products'=>$products]);
     }
-    
+
     public function search(Request $req){
     	$first_price = $req->first_price;
     	$second_price = $req->second_price;
         $products = Product::with('rooms')->whereHas('rooms', function($q) use($first_price,$second_price) {
-            $q->whereBetween('price',[$first_price,$second_price]); 
-        })->get();        
+            $q->whereBetween('price',[$first_price,$second_price]);
+        })->get();
        return view('index',['products'=>$products]);
-    
+
     }
     //API
     public function getProducts(){
         $products = Product::all();
-        //dd($products);
-        return MainProductResource::collection($products);
+        $prods = $products->sortByDesc('created_at');
+        return MainProductResource::collection($prods);
     }
-    public function searchProducts(Request $req){    
-        $first_price = $req->first_price;
-        $second_price = $req->second_price;
+    public function searchProducts(Request $request){
+        $first_price = $request->first_price;
+        $second_price = $request->second_price;
         $products = Product::with('rooms')->whereHas('rooms', function($q) use($first_price,$second_price) {
-            $q->whereBetween('price',[$first_price,$second_price]); 
-        })->get();        
+            $q->whereBetween('price',[$first_price,$second_price]);
+        })->get();
        return MainProductResource::collection($products);
-    
+
     }
 }
