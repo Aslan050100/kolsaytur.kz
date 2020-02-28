@@ -26,8 +26,7 @@ class DetailsController extends Controller
         $order->adults = $req->get('adults');
         $order->room_id = $req->get('room_id');
         $order->save();
-        //dd($order);
-        return $order;
+        return "Order inserted";
     }
 
 
