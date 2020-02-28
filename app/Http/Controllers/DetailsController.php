@@ -15,16 +15,16 @@ use App\Ip;
 class DetailsController extends Controller
 {
 //Api
-    public function addOrder1(Request $req){
+    public function addOrder1(Request $request){
         $order = new Order;
-        $order->product_id = $req->get('pro_id');
-        $order->check_in = $req->input('checkin');
-        $order->check_out = $req->input('checkout');
-        $order->name = $req->input('name');
-        $order->email = $req->input('email');
-        $order->phone_number = $req->input('phone');
-        $order->adults = $req->get('adults');
-        $order->room_id = $req->get('room_id');
+        $order->product_id = $request->get('pro_id');
+        $order->check_in = $request->input('checkin');
+        $order->check_out = $request->input('checkout');
+        $order->name = $request->input('name');
+        $order->email = $request->input('email');
+        $order->phone_number = $request->input('phone');
+        $order->adults = $request->get('adults');
+        $order->room_id = $request->get('room_id');
         $order->save();
         return "Order inserted";
     }

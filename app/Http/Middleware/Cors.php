@@ -17,10 +17,9 @@ class Cors
     {
         //ALLOW OPTIONS METHOD
         $headers = [
-            'Access-Control-Allow-Origin' => 'http://localhost:8081',
+            'Access-Control-Allow-Origin' => '*',
             'Access-Control-Allow-Methods' => 'POST,GET,OPTIONS,PUT,DELETE',
-            "X-Requested-With"=> "XMLHttpRequest",
-            'Access-Control-Allow-Headers' => 'Content-Type, X-Auth-Token, Origin, Authorization,X-Requested-With',
+            'Access-Control-Allow-Headers' => $request->header('Access-Control-Request-Headers'),
         ];
         if ($request->getMethod() == "OPTIONS"){
             //The client-side application can set only headers allowed in Access-Control-Allow-Headers
