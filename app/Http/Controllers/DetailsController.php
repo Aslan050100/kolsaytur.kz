@@ -17,12 +17,12 @@ class DetailsController extends Controller
 //Api
     public function addOrder1(Request $request){
         $order = new Order;
-        $order->product_id = $request->pro_id;
-        $order->check_in = $request->checkin;
-        $order->check_out = $request->checkout;
+        $order->product_id = $request->product_id;
+        $order->check_in = $request->check_in;
+        $order->check_out = $request->check_out;
         $order->name = $request->name;
         $order->email = $request->email;
-        $order->phone_number = $request->phone;
+        $order->phone_number = $request->phone_number;
         $order->adults = $request->adults;
         $order->room_id = $request->room_id;
         $order->save();
