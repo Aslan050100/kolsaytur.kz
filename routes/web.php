@@ -13,6 +13,13 @@
 
 Auth::routes();
 
+Route::get('/', function(){
+    return view('vue.landing');
+});
+Route::get('/hotel', function(){
+    return view('vue.landingForHotel');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
