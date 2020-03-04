@@ -3,6 +3,7 @@
     @if(isset($canonical))
         <link rel="canonical" href="{{ $canonical }}" />
     @endif
+    {!! SEO::generate() !!}
 </head>
 <body>
 <div id="app">
