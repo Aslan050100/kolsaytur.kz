@@ -18,6 +18,7 @@ class MainProduct extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'slug' => $this->slug,
             'popular' => $this->popular,
             'description' => $this->description,
             'map' => $this->map,
