@@ -1915,11 +1915,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -1984,7 +1979,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -60514,69 +60508,75 @@ var render = function() {
                   "div",
                   { key: hotel.id, staticClass: "hotel-container" },
                   [
-                    _c("router-link", { attrs: { to: { name: "detail" } } }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "hotel",
-                          style: {
-                            backgroundImage:
-                              "url(" +
-                              "https://sirius.onmonday.kz/assets/images/20200226123752.PNG" +
-                              ")"
-                          }
-                        },
-                        [
-                          _c(
-                            "div",
-                            { staticClass: "hotel-info" },
-                            [
-                              _c(
-                                "h3",
-                                { staticClass: "subtext semi-bold mb-3" },
-                                [_vm._v(_vm._s(hotel.name))]
-                              ),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "small-text" }, [
+                    _c(
+                      "router-link",
+                      { attrs: { to: "/detail/" + hotel.id } },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "hotel",
+                            style: {
+                              backgroundImage:
+                                "url(" +
+                                "https://sirius.onmonday.kz/assets/images/20200226123752.PNG" +
+                                ")"
+                            }
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "hotel-info" },
+                              [
+                                _c(
+                                  "h3",
+                                  { staticClass: "subtext semi-bold mb-3" },
+                                  [_vm._v(_vm._s(hotel.name))]
+                                ),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "small-text" }, [
+                                  _vm._v(
+                                    "от " +
+                                      _vm._s(hotel.min_price) +
+                                      " тг - до " +
+                                      _vm._s(hotel.max_price) +
+                                      " тг"
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _vm._l(hotel.rating / 2, function(index) {
+                                  return _c("img", {
+                                    key: index,
+                                    attrs: {
+                                      src: __webpack_require__(/*! ../assets/active-star.png */ "./resources/js/assets/active-star.png"),
+                                      alt: ""
+                                    }
+                                  })
+                                }),
+                                _vm._v(" "),
+                                _vm._l((10 - hotel.rating) / 2, function(
+                                  index
+                                ) {
+                                  return _c("img", {
+                                    key: index,
+                                    attrs: {
+                                      src: __webpack_require__(/*! ../assets/disabled-star.png */ "./resources/js/assets/disabled-star.png"),
+                                      alt: ""
+                                    }
+                                  })
+                                }),
                                 _vm._v(
-                                  "от " +
-                                    _vm._s(hotel.min_price) +
-                                    " тг - до " +
-                                    _vm._s(hotel.max_price) +
-                                    " тг"
+                                  "\n              " +
+                                    _vm._s(hotel.rating) +
+                                    "\n\n            "
                                 )
-                              ]),
-                              _vm._v(" "),
-                              _vm._l(hotel.rating / 2, function(index) {
-                                return _c("img", {
-                                  key: index,
-                                  attrs: {
-                                    src: __webpack_require__(/*! ../assets/active-star.png */ "./resources/js/assets/active-star.png"),
-                                    alt: ""
-                                  }
-                                })
-                              }),
-                              _vm._v(" "),
-                              _vm._l((10 - hotel.rating) / 2, function(index) {
-                                return _c("img", {
-                                  key: index,
-                                  attrs: {
-                                    src: __webpack_require__(/*! ../assets/disabled-star.png */ "./resources/js/assets/disabled-star.png"),
-                                    alt: ""
-                                  }
-                                })
-                              }),
-                              _vm._v(
-                                "\n                " +
-                                  _vm._s(hotel.rating) +
-                                  "\n\n              "
-                              )
-                            ],
-                            2
-                          )
-                        ]
-                      )
-                    ])
+                              ],
+                              2
+                            )
+                          ]
+                        )
+                      ]
+                    )
                   ],
                   1
                 )
@@ -77965,7 +77965,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_9__["default"]({
     component: _views_Home__WEBPACK_IMPORTED_MODULE_7__["default"],
     name: 'landing'
   }, {
-    path: '/detail',
+    path: '/detail/:id',
     component: _views_Hotel1__WEBPACK_IMPORTED_MODULE_8__["default"],
     name: 'detail'
   }]

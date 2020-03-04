@@ -11,5 +11,9 @@ class AppController extends Controller
     {
         return view('app');
     }
+    public function detail()
+    {
+        return view('app');
+    }
 
 }

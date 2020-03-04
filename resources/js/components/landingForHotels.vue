@@ -125,7 +125,6 @@
 </template>
 
 <script>
-
     export default {
 
   name: "landingForHotels",

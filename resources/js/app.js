@@ -30,14 +30,14 @@ Vue.use(VueRouter);
 Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 Vue.use(axios);
 
 const router = new VueRouter({
     mode: 'history',
     routes: [
         { path: '/', component: Home , name: 'landing' },
-        { path: '/detail', component: Hotel1 , name: 'detail' },
+        { path: '/detail/:id', component: Hotel1 , name: 'detail' },
     ]
 });
 
