@@ -36,7 +36,7 @@ Vue.use(axios);
 const router = new VueRouter({
     mode: 'history',
     routes: [
-        { path: '/landing', component: Home , name: 'landing' },
+        { path: '/', component: Home , name: 'landing' },
         { path: '/detail', component: Hotel1 , name: 'detail' },
     ]
 });

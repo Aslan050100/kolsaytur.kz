@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="container d-flex justify-content-between">
-      <router-link to="/landing">
+      <router-link to="/">
       <div class="logo">
         GuestHouses
       </div>

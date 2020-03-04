@@ -60675,7 +60675,7 @@ var render = function() {
       "div",
       { staticClass: "container d-flex justify-content-between" },
       [
-        _c("router-link", { attrs: { to: "/landing" } }, [
+        _c("router-link", { attrs: { to: "/" } }, [
           _c("div", { staticClass: "logo" }, [
             _vm._v("\n      GuestHouses\n    ")
           ])
@@ -60766,7 +60766,7 @@ var render = function() {
         "div",
         { staticClass: "container d-flex justify-content-between" },
         [
-          _c("router-link", { attrs: { to: "/landing" } }, [
+          _c("router-link", { attrs: { to: "/" } }, [
             _c("div", { staticClass: "logo" }, [
               _c("h3", [_vm._v("GuestHouses")])
             ])
@@ -77961,7 +77961,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(axios__WEBPACK_IMPORTED_MODULE_6_
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_9__["default"]({
   mode: 'history',
   routes: [{
-    path: '/landing',
+    path: '/',
     component: _views_Home__WEBPACK_IMPORTED_MODULE_7__["default"],
     name: 'landing'
   }, {
