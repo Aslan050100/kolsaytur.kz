@@ -37,7 +37,7 @@ const router = new VueRouter({
     mode: 'history',
     routes: [
         { path: '/', component: Home , name: 'landing' },
-        { path: '/detail/:id', component: Hotel1 , name: 'detail' },
+        { path: '/detail/:id/:slug?', component: Hotel1 , name: 'detail' },
     ]
 });
 

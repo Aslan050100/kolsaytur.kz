@@ -36,7 +36,7 @@
         <p class="subtext mb-4">Последние добавленные</p>
         <div class="hotels row">
           <div class="hotel-container" v-for="hotel in hotels" v-bind:key="hotel.id">
-              <router-link v-bind:to="'/detail/' + hotel.id">
+              <router-link v-bind:to="'/detail/' + hotel.id +'/'+ hotel.slug">
             <div class="hotel" v-bind:style="{ backgroundImage: 'url('+'https://sirius.onmonday.kz/assets/images/20200226123752.PNG'+')' }">
               <div class="hotel-info">
                 <h3 class="subtext semi-bold mb-3">{{hotel.name}}</h3>

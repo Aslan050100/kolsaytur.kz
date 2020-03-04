@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Product extends Model
 {
@@ -36,5 +37,13 @@ class Product extends Model
             return $image_url;
         }
         return "https://sirius.onmonday.kz/assets/images/".$image_url;
+    }
+    public function getSlugAttribute(): string
+    {
+        return Str::slug($this->name);
+    }
+    public function getUrlAttribute(): string
+    {
+        return action('AppController@detail', [$this->id, $this->slug]);
     }
 }

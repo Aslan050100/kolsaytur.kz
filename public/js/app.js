@@ -60510,7 +60510,9 @@ var render = function() {
                   [
                     _c(
                       "router-link",
-                      { attrs: { to: "/detail/" + hotel.id } },
+                      {
+                        attrs: { to: "/detail/" + hotel.id + "/" + hotel.slug }
+                      },
                       [
                         _c(
                           "div",
@@ -77965,7 +77967,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_9__["default"]({
     component: _views_Home__WEBPACK_IMPORTED_MODULE_7__["default"],
     name: 'landing'
   }, {
-    path: '/detail/:id',
+    path: '/detail/:id/:slug?',
     component: _views_Hotel1__WEBPACK_IMPORTED_MODULE_8__["default"],
     name: 'detail'
   }]

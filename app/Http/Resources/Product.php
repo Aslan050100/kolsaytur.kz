@@ -22,6 +22,7 @@ class Product extends JsonResource
             'popular' => $this->popular,
             'description' => $this->description,
             'map' => $this->map,
+            'slug' => $this->slug,
             'rating' => $this->rating,
             'visit' => $this->visit,
             'image' => $this->image_url,

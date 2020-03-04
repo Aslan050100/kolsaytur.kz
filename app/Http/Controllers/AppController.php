@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Routing\Route;
+use App\Product;
 class AppController extends Controller
 {
 
@@ -11,9 +12,13 @@ class AppController extends Controller
     {
         return view('app');
     }
-    public function detail()
+    public function detail($id, $slug = '')
     {
-        return view('app');
+        $product = Product::findOrFail($id);
+
+        return view('app')
+            ->withProduct($product)
+            ->withCanonical($product->url);
     }
 
 }
