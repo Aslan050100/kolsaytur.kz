@@ -1,14 +1,14 @@
 <template>
   <header>
     <div class="container d-flex justify-content-between">
-      <router-link to="/">
+      <router-link to="/landing">
       <div class="logo">
         GuestHouses
       </div>
       </router-link>
       <div>
         <ul class="list-unstyled links d-flex">
-          <li class="active"> <router-link to="/" style="color: white">Главная</router-link></li>
+          <li class="active"> <router-link :to="{ name: 'landing' }">Главная</router-link></li>
           <li><router-link to="/about" style="color: white">О нас</router-link>
             </li>
           <li><router-link to="/contacts" style="color: white">Kонтакты</router-link></li>

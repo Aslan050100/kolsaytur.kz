@@ -2,9 +2,11 @@
   <div>
   <div class="header">
     <div class="container d-flex justify-content-between">
+        <router-link to="/landing">
       <div class="logo">
         <h3>GuestHouses</h3>
       </div>
+        </router-link>
       <div class="">
         <ul class="d-flex list-inline links">
           <li class="active"><a href="#Galery">Галерея</a></li>

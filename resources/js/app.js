@@ -15,24 +15,34 @@ import Vue from 'vue'
 // app.js
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import App from './App.vue'
-import router from './router'
-import store from './store'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueResource from 'vue-resource'
 import axios from 'axios'
+import Home from './views/Home'
+import Hotel1 from './views/Hotel1'
+import VueRouter from "vue-router"
 
 
-Vue.use(VueResource)
+Vue.use(VueResource);
+Vue.use(VueRouter);
 // Install BootstrapVue
-Vue.use(BootstrapVue)
+Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
-Vue.use(IconsPlugin)
+Vue.use(IconsPlugin);
 Vue.config.productionTip = false
-Vue.use(axios)
+Vue.use(axios);
 
-new Vue({
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        { path: '/landing', component: Home , name: 'landing' },
+        { path: '/detail', component: Hotel1 , name: 'detail' },
+    ]
+});
+
+const app = new Vue({
+    el: '#app',
+    components: { App },
     router,
-    store,
-    render: h => h(App)
-}).$mount('#app')
+});

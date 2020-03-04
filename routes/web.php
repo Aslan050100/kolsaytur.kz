@@ -13,12 +13,8 @@
 
 Auth::routes();
 
-Route::get('/', function(){
-    return view('vue.landing');
-});
-Route::get('/hotel', function(){
-    return view('vue.landingForHotel');
-});
+
+Route::get('/{any}', 'AppController@index')->where('any', '.*');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
