@@ -4,7 +4,7 @@
     <div class="container d-flex justify-content-between">
         <router-link to="/">
       <div class="logo">
-        <h3>GuestHouses</h3>
+        <h3>Kolsaytur</h3>
       </div>
         </router-link>
       <div class="">
@@ -315,16 +315,6 @@
     .location {
         padding-top: 100px;
     }
-    @media screen and (max-width: 576px) {
-        .rooms .prices div {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .for-form {
-            width: 100%;
-            padding: 20px 25px;
-        }
-    }
     .header {
       width: 100%;
       position: absolute;
@@ -346,5 +336,17 @@
       padding-top: 16px !important;
       border-top: white solid 4px;
     }
+  @media screen and (max-width: 576px) {
+      .links {
+          display: none;
+      }
+      .hamburger-menu {
+          display: block;
+      }
+      .logo {
+          font-size: 26px;
+          line-height: 35px;
+      }
+  }
 
 </style>

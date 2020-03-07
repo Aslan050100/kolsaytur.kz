@@ -16,6 +16,9 @@
           </li>
         </ul>
       </div>
+        <div class="hamburger-menu">
+            <img src="../assets/mail.svg" alt="">
+        </div>
     </div>
   </div>
 </template>
@@ -47,6 +50,21 @@
   .active {
     padding-top: 16px !important;
     border-top: white solid 4px;
+  }
+  .hamburger-menu {
+      display: none;
+  }
+  @media screen and (max-width: 576px){
+      .links {
+          display: none;
+      }
+      .hamburger-menu {
+          display: block;
+      }
+      .logo{
+          font-size: 26px;
+          line-height: 35px;
+      }
   }
 
 </style>

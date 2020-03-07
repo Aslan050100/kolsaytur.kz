@@ -4,7 +4,7 @@
  * building robust, powerful web applications using React + Laravel.
  */
 
-require('./bootstrap');
+//require('./bootstrap');
 
 /**
  * Next, we will create a fresh React component instance and attach it to
@@ -12,23 +12,19 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 import Vue from 'vue'
-// app.js
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import App from './App.vue'
+import Home from './views/Home'
+import Hotel1 from './views/Hotel1'
+import VueRouter from "vue-router"
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueResource from 'vue-resource'
 import axios from 'axios'
-import Home from './views/Home'
-import Hotel1 from './views/Hotel1'
-import VueRouter from "vue-router"
-
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
-// Install BootstrapVue
 Vue.use(BootstrapVue);
-// Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
 Vue.config.productionTip = false;
 Vue.use(axios);

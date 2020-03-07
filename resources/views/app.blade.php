@@ -1,6 +1,8 @@
 <html>
 <head>
-    @if(isset($canonical))
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@if(isset($canonical))
         <link rel="canonical" href="{{ $canonical }}" />
     @endif
     {!! SEO::generate() !!}
@@ -9,7 +11,7 @@
 <div id="app">
     <app></app>
 </div>
-<script src="js/app.js"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
 
