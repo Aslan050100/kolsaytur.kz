@@ -2263,7 +2263,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "landingForHotels",
   data: function data() {
@@ -38641,7 +38640,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\na[data-v-5f3230dc]{\n  color: white;\n  text-decoration: none;\n}\na[data-v-5f3230dc]:hover {\n  color: white;\n}\n.landing[data-v-5f3230dc] {\n      color: #4A4A4A;\n      background: url(" + escape(__webpack_require__(/*! ../assets/bacgroundForHotel.png */ "./resources/js/assets/bacgroundForHotel.png")) + ") no-repeat top;\n}\n.form-contact[data-v-5f3230dc] {\n      height: 827px;\n      width: 100%;\n}\n.for-form[data-v-5f3230dc] {\n      background: white;\n      border-radius: 10px;\n      padding: 40px;\n      width: 500px;\n}\n.for-form .form-title[data-v-5f3230dc] {\n      font-weight: normal;\n      text-align: center;\n      width: 100%;\n      margin-bottom: 40px;\n      text-transform: uppercase;\n}\n.for-form input[data-v-5f3230dc] {\n      font-size: 22px;\n      line-height: 29px;\n      border-radius: 5px;\n      padding: 10px 20px;\n      border: 1px solid #CCCCCC;\n      margin-bottom: 20px;\n}\n.for-form label[data-v-5f3230dc] {\n      font-size: 24px;\n      line-height: 32px;\n}\n.for-form input[data-v-5f3230dc] {\n      width: 100%;\n}\n.for-form input[data-v-5f3230dc]::placeholder {\n      color: #999999;\n}\ninput[type=submit][data-v-5f3230dc] {\n      width: 100%;\n      color: white;\n      padding: 11px;\n      background: #E73E4B;\n      border-radius: 10px;\n      cursor: pointer;\n      border: none;\n}\n.show-photos[data-v-5f3230dc] {\n      background: white;\n      border: none;\n      border-radius: 5px;\n      padding: 11px 44px;\n      font-weight: 600;\n      font-size: 22px;\n      line-height: 29px;\n      letter-spacing: 0.05em;\n}\n.information[data-v-5f3230dc] {\n      margin-top: 180px;\n      padding-bottom: 100px;\n      font-style: normal;\n      font-weight: normal;\n      font-size: 30px;\n      line-height: 40px;\n      letter-spacing: 0.05em;\n}\n.label[data-v-5f3230dc] {\n      font-size: 32px;\n      font-weight: 600;\n      margin-bottom: 50px;\n      text-transform: uppercase;\n}\n.information p[data-v-5f3230dc] {\n      font-size: 30px;\n      line-height: 40px;\n}\n.comfort[data-v-5f3230dc] {\n      background: #F9FAFB;\n      padding: 40px 0;\n}\n.comfort .condition[data-v-5f3230dc] {\n      font-size: 28px;\n      line-height: 33px;\n      font-weight: 300;\n      white-space: nowrap;\n      min-height: 160px;\n}\n.comfort .condition img[data-v-5f3230dc] {\n      margin: auto;\n}\n.rooms[data-v-5f3230dc] {\n      padding-top: 100px;\n}\n.rooms .prices div[data-v-5f3230dc] {\n      height: 420px;\n      width: 32.5%;\n      padding-top: 60px;\n      border: 1px solid #999999;\n      border-radius: 10px;\n}\n.rooms .room-name[data-v-5f3230dc] {\n      font-size: 29px;\n      line-height: 39px;\n      margin-bottom: 50px;\n}\n.rooms .room-price[data-v-5f3230dc] {\n      font-size: 68px;\n      line-height: 90px;\n      font-weight: 600;\n      letter-spacing: 0.05em;\n      margin-bottom: 30px;\n}\n.rooms .room-type[data-v-5f3230dc] {\n      font-weight: 400;\n      font-size: 27px;\n      line-height: 36px;\n      letter-spacing: 0.05em;\n}\n.location[data-v-5f3230dc] {\n      padding-top: 100px;\n}\n.header[data-v-5f3230dc] {\n    width: 100%;\n    position: absolute;\n    color: white;\n}\n.logo[data-v-5f3230dc] {\n    margin-top: 30px;\n}\n.links[data-v-5f3230dc] {\n    margin-top: 15px;\n}\n.links li[data-v-5f3230dc] {\n    margin-left: 50px;\n    padding-top: 20px;\n    font-size: 22px;\n    line-height: 29px;\n}\n.active[data-v-5f3230dc] {\n    padding-top: 16px !important;\n    border-top: white solid 4px;\n}\n@media screen and (max-width: 576px) {\n.links[data-v-5f3230dc] {\n        display: none;\n}\n.hamburger-menu[data-v-5f3230dc] {\n        display: block;\n}\n.logo[data-v-5f3230dc] {\n        font-size: 26px;\n        line-height: 35px;\n}\n}\n\n", ""]);
+exports.push([module.i, "\na[data-v-5f3230dc]{\n    color: white;\n    text-decoration: none;\n}\na[data-v-5f3230dc]:hover {\n    color: white;\n}\n.landing[data-v-5f3230dc] {\n    color: #4A4A4A;\n    background: url(" + escape(__webpack_require__(/*! ../assets/bacgroundForHotel.png */ "./resources/js/assets/bacgroundForHotel.png")) + ") no-repeat top;\n}\n.form-contact[data-v-5f3230dc] {\n    height: 827px;\n    width: 100%;\n}\n.for-form[data-v-5f3230dc] {\n    background: white;\n    border-radius: 10px;\n    padding: 40px;\n    width: 500px;\n}\n.for-form .form-title[data-v-5f3230dc] {\n    font-weight: normal;\n    text-align: center;\n    width: 100%;\n    margin-bottom: 40px;\n    text-transform: uppercase;\n}\n.for-form input[data-v-5f3230dc] {\n    font-size: 22px;\n    line-height: 29px;\n    border-radius: 5px;\n    padding: 10px 20px;\n    border: 1px solid #CCCCCC;\n    margin-bottom: 20px;\n}\n.for-form label[data-v-5f3230dc] {\n    font-size: 24px;\n    line-height: 32px;\n}\n.for-form input[data-v-5f3230dc] {\n    width: 100%;\n}\n.for-form input[data-v-5f3230dc]::placeholder {\n    color: #999999;\n}\ninput[type=submit][data-v-5f3230dc] {\n    width: 100%;\n    color: white;\n    padding: 11px;\n    background: #E73E4B;\n    border-radius: 10px;\n    cursor: pointer;\n    border: none;\n}\n.show-photos[data-v-5f3230dc] {\n    background: white;\n    border: none;\n    border-radius: 5px;\n    padding: 11px 44px;\n    font-weight: 600;\n    font-size: 22px;\n    line-height: 29px;\n    letter-spacing: 0.05em;\n}\n.information[data-v-5f3230dc] {\n    margin-top: 180px;\n    padding-bottom: 100px;\n    font-style: normal;\n    font-weight: normal;\n    font-size: 30px;\n    line-height: 40px;\n    letter-spacing: 0.05em;\n}\n.label[data-v-5f3230dc] {\n    font-size: 32px;\n    font-weight: 600;\n    margin-bottom: 50px;\n    text-transform: uppercase;\n}\n.information p[data-v-5f3230dc] {\n    font-size: 30px;\n    line-height: 40px;\n}\n.comfort[data-v-5f3230dc] {\n    background: #F9FAFB;\n    padding: 40px 0;\n}\n.comfort .condition[data-v-5f3230dc] {\n    font-size: 28px;\n    line-height: 33px;\n    font-weight: 300;\n    white-space: nowrap;\n    min-height: 160px;\n}\n.comfort .condition img[data-v-5f3230dc] {\n    margin: auto;\n}\n.rooms[data-v-5f3230dc] {\n    padding-top: 100px;\n}\n.rooms .prices div[data-v-5f3230dc] {\n    height: 420px;\n    width: 32.5%;\n    padding-top: 60px;\n    border: 1px solid #999999;\n    border-radius: 10px;\n}\n.rooms .room-name[data-v-5f3230dc] {\n    font-size: 29px;\n    line-height: 39px;\n    margin-bottom: 50px;\n}\n.rooms .room-price[data-v-5f3230dc] {\n    font-size: 68px;\n    line-height: 90px;\n    font-weight: 600;\n    letter-spacing: 0.05em;\n    margin-bottom: 30px;\n}\n.rooms .room-type[data-v-5f3230dc] {\n    font-weight: 400;\n    font-size: 27px;\n    line-height: 36px;\n    letter-spacing: 0.05em;\n}\n.location[data-v-5f3230dc] {\n    padding-top: 100px;\n}\n@media screen and (max-width: 576px) {\n.rooms .prices div[data-v-5f3230dc] {\n        width: 100%;\n        margin-bottom: 20px;\n}\n.for-form[data-v-5f3230dc] {\n        width: 100%;\n        padding: 20px 25px;\n}\n}\n.header[data-v-5f3230dc] {\n    width: 100%;\n    position: absolute;\n    color: white;\n}\n.logo[data-v-5f3230dc] {\n    margin-top: 30px;\n}\n.links[data-v-5f3230dc] {\n    margin-top: 15px;\n}\n.links li[data-v-5f3230dc] {\n    margin-left: 50px;\n    padding-top: 20px;\n    font-size: 22px;\n    line-height: 29px;\n}\n.active[data-v-5f3230dc] {\n    padding-top: 16px !important;\n    border-top: white solid 4px;\n}\n.hamburger-menu[data-v-5f3230dc] {\n    display: none;\n}\n@media screen and (max-width: 576px) {\n.links[data-v-5f3230dc] {\n        display: none;\n}\n.hamburger-menu[data-v-5f3230dc] {\n        display: block;\n        padding-bottom: 10px;\n}\n.logo[data-v-5f3230dc] {\n        font-size: 26px;\n        line-height: 35px;\n}\n}\n", ""]);
 
 // exports
 
@@ -43683,22 +43682,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "header" }, [
-      _c(
-        "div",
-        { staticClass: "container d-flex justify-content-between" },
-        [
-          _c("router-link", { attrs: { to: "/" } }, [
-            _c("div", { staticClass: "logo" }, [
-              _c("h3", [_vm._v("Kolsaytur")])
-            ])
-          ]),
-          _vm._v(" "),
-          _vm._m(0)
-        ],
-        1
-      )
-    ]),
+    _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "landing" }, [
       _c("div", { staticClass: "container d-flex flex-column" }, [
@@ -43718,37 +43702,60 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "d-flex" }, [
-                  _c("div", { staticClass: "w-50 mr-2" }, [
-                    _c("label", { attrs: { for: "comingDate" } }, [
-                      _vm._v("Прибытие")
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.bron.check_in,
-                          expression: "bron.check_in"
-                        }
-                      ],
-                      attrs: {
-                        type: "text",
-                        id: "comingDate",
-                        placeholder: "дд.мм.гг",
-                        name: "check_in"
-                      },
-                      domProps: { value: _vm.bron.check_in },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                  _c(
+                    "div",
+                    { staticClass: "w-50 mr-2" },
+                    [
+                      _c("label", { attrs: { for: "comingDate" } }, [
+                        _vm._v("Прибытие")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.bron.checkin,
+                            expression: "bron.checkin"
                           }
-                          _vm.$set(_vm.bron, "check_in", $event.target.value)
+                        ],
+                        attrs: {
+                          type: "text",
+                          id: "comingDate",
+                          placeholder: "дд.мм.гг",
+                          name: "checkin"
+                        },
+                        domProps: { value: _vm.bron.checkin },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.bron, "checkin", $event.target.value)
+                          }
                         }
-                      }
-                    })
-                  ]),
+                      }),
+                      _vm._v(" "),
+                      _c("date-picker", {
+                        attrs: {
+                          lang: "en",
+                          id: "comingDate",
+                          placeholder: "дд.мм.гг",
+                          name: "checkin",
+                          type: "date",
+                          format: "YYYY-MM-dd"
+                        },
+                        model: {
+                          value: _vm.bron.checkin,
+                          callback: function($$v) {
+                            _vm.$set(_vm.bron, "checkin", $$v)
+                          },
+                          expression: "bron.checkin"
+                        }
+                      })
+                    ],
+                    1
+                  ),
                   _vm._v(" "),
                   _c("div", { staticClass: "w-50" }, [
                     _c("label", { attrs: { for: "outDate" } }, [
@@ -43760,23 +43767,23 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.bron.check_out,
-                          expression: "bron.check_out"
+                          value: _vm.bron.checkout,
+                          expression: "bron.checkout"
                         }
                       ],
                       attrs: {
                         type: "text",
                         id: "outDate",
                         placeholder: "дд.мм.гг",
-                        name: "check_out"
+                        name: "checout"
                       },
-                      domProps: { value: _vm.bron.check_out },
+                      domProps: { value: _vm.bron.checkout },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(_vm.bron, "check_out", $event.target.value)
+                          _vm.$set(_vm.bron, "checkout", $event.target.value)
                         }
                       }
                     })
@@ -43814,7 +43821,7 @@ var render = function() {
                     }
                   ],
                   attrs: {
-                    type: "email",
+                    type: "text",
                     placeholder: "Электронная почта",
                     name: "email"
                   },
@@ -43834,8 +43841,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.bron.phone_number,
-                      expression: "bron.phone_number"
+                      value: _vm.bron.phone,
+                      expression: "bron.phone"
                     }
                   ],
                   attrs: {
@@ -43843,13 +43850,13 @@ var render = function() {
                     placeholder: "Телефон",
                     name: "phone"
                   },
-                  domProps: { value: _vm.bron.phone_number },
+                  domProps: { value: _vm.bron.phone },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.bron, "phone_number", $event.target.value)
+                      _vm.$set(_vm.bron, "phone", $event.target.value)
                     }
                   }
                 }),
@@ -43887,12 +43894,9 @@ var render = function() {
                 _c("input", {
                   attrs: { type: "submit", value: "Бронировать" },
                   on: {
-                    click: [
-                      _vm.post,
-                      function($event) {
-                        $event.preventDefault()
-                      }
-                    ]
+                    click: function($event) {
+                      $event.preventDefault()
+                    }
                   }
                 })
               ])
@@ -43984,27 +43988,43 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", {}, [
-      _c("ul", { staticClass: "d-flex list-inline links" }, [
-        _c("li", { staticClass: "active" }, [
-          _c("a", { attrs: { href: "#Galery" } }, [_vm._v("Галерея")])
+    return _c("div", { staticClass: "header" }, [
+      _c("div", { staticClass: "container d-flex justify-content-between" }, [
+        _c("div", { staticClass: "logo" }, [_c("h3", [_vm._v("Kolsaytur")])]),
+        _vm._v(" "),
+        _c("div", { staticClass: "links" }, [
+          _c("ul", { staticClass: "d-flex list-inline" }, [
+            _c("li", { staticClass: "active" }, [
+              _c("a", { attrs: { href: "#Galery" } }, [_vm._v("Галерея")])
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#Information" } }, [
+                _vm._v("Информация")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#Comfort" } }, [_vm._v("Удобства")])
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#Number" } }, [_vm._v("Номера")])
+            ]),
+            _vm._v(" "),
+            _c("li", [_c("a", { attrs: { href: "#Map" } }, [_vm._v("Карта")])]),
+            _vm._v(" "),
+            _c("li", [
+              _c("img", {
+                attrs: { src: __webpack_require__(/*! ../assets/lang--ru.svg */ "./resources/js/assets/lang--ru.svg"), alt: "" }
+              })
+            ])
+          ])
         ]),
         _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#Information" } }, [_vm._v("Информация")])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#Comfort" } }, [_vm._v("Удобства")])
-        ]),
-        _vm._v(" "),
-        _c("li", [_c("a", { attrs: { href: "#Number" } }, [_vm._v("Номера")])]),
-        _vm._v(" "),
-        _c("li", [_c("a", { attrs: { href: "#Map" } }, [_vm._v("Карта")])]),
-        _vm._v(" "),
-        _c("li", [
+        _c("div", { staticClass: "hamburger-menu" }, [
           _c("img", {
-            attrs: { src: __webpack_require__(/*! ../assets/lang--ru.svg */ "./resources/js/assets/lang--ru.svg"), alt: "" }
+            attrs: { src: __webpack_require__(/*! ../assets/hamburger-menu.svg */ "./resources/js/assets/hamburger-menu.svg"), alt: "" }
           })
         ])
       ])

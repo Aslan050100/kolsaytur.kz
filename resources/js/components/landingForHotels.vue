@@ -1,129 +1,128 @@
 <template>
-  <div>
-  <div class="header">
-    <div class="container d-flex justify-content-between">
-        <router-link to="/">
-      <div class="logo">
-        <h3>Kolsaytur</h3>
-      </div>
-        </router-link>
-      <div class="">
-        <ul class="d-flex list-inline links">
-          <li class="active"><a href="#Galery">Галерея</a></li>
-          <li><a href="#Information">Информация</a></li>
-          <li><a href="#Comfort">Удобства</a></li>
-          <li><a href="#Number">Номера</a></li>
-          <li><a href="#Map">Карта</a></li>
-          <li>
-            <img src="../assets/lang--ru.svg" alt="">
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-    <div class="landing">
-        <div class="container d-flex flex-column">
-            <div class="d-flex justify-content-md-between flex-column-reverse flex-md-row form-contact">
-                <div class="mt-auto"><button class="show-photos col-12 col-md-auto">Просмотреть фото</button></div>
-                <div class="mt-auto">
-                    <form action="" class="for-form">
-                        <h3 class="form-title">Бронируйте жилье</h3>
-                        <div class="d-flex">
-                            <div class="w-50 mr-2">
-                                <label for="comingDate">Прибытие</label>
-                                <input type="text" id="comingDate" placeholder="дд.мм.гг" name="check_in" v-model="bron.check_in">
-                            </div>
-                            <div class="w-50">
-                                <label for="outDate">Выезд</label>
-                                <input type="text" id="outDate" placeholder="дд.мм.гг" name="check_out" v-model="bron.check_out">
-                            </div>
-                        </div>
-                        <input type="text" placeholder="Ф.И.О." name="name" v-model="bron.name">
-                        <input type="email" placeholder="Электронная почта" name="email" v-model="bron.email">
-                        <input type="text" placeholder="Телефон" v-model="bron.phone_number" name="phone">
-                        <label for="count">Количество гостей</label>
-                        <input type="text" id="count" value="1" v-model="bron.adults" name="adults">
-                        <input type="submit" value="Бронировать" v-on:click="post" @click.prevent="">
-
-                    </form>
+    <div>
+        <div class="header">
+            <div class="container d-flex justify-content-between">
+                <div class="logo">
+                    <h3>Kolsaytur</h3>
+                </div>
+                <div class="links">
+                    <ul class="d-flex list-inline">
+                        <li class="active"><a href="#Galery">Галерея</a></li>
+                        <li><a href="#Information">Информация</a></li>
+                        <li><a href="#Comfort">Удобства</a></li>
+                        <li><a href="#Number">Номера</a></li>
+                        <li><a href="#Map">Карта</a></li>
+                        <li>
+                            <img src="../assets/lang--ru.svg" alt="">
+                        </li>
+                    </ul>
+                </div>
+                <div class="hamburger-menu">
+                    <img src="../assets/hamburger-menu.svg" alt="">
                 </div>
             </div>
         </div>
-        <div class="container information" id="Information">
-            <h3 class="label">{{blog.name}}</h3>
+        <div class="landing">
+            <div class="container d-flex flex-column">
+                <div class="d-flex justify-content-md-between flex-column-reverse flex-md-row form-contact">
+                    <div class="mt-auto"><button class="show-photos col-12 col-md-auto">Просмотреть фото</button></div>
+                    <div class="mt-auto">
+                        <form action="" class="for-form">
+                            <h3 class="form-title">Бронируйте жилье</h3>
+                            <div class="d-flex">
+                                <div class="w-50 mr-2">
+                                    <label for="comingDate">Прибытие</label>
+                                    <input type="text" id="comingDate" placeholder="дд.мм.гг" name="checkin" v-model="bron.checkin">
+                                    <date-picker v-model="bron.checkin" lang="en" id="comingDate" placeholder="дд.мм.гг" name="checkin"  type="date" format="YYYY-MM-dd"></date-picker>
+                                </div>
+                                <div class="w-50">
+                                    <label for="outDate">Выезд</label>
+                                    <input type="text" id="outDate" placeholder="дд.мм.гг" name="checout" v-model="bron.checkout">
+                                </div>
+                            </div>
+                            <input type="text" placeholder="Ф.И.О." name="name" v-model="bron.name">
+                            <input type="text" placeholder="Электронная почта" name="email" v-model="bron.email">
+                            <input type="text" placeholder="Телефон" v-model="bron.phone" name="phone">
+                            <label for="count">Количество гостей</label>
+                            <input type="text" id="count" value="1" v-model="bron.adults" name="adults">
+                            <input type="submit" value="Бронировать" @click.prevent="">
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="container information" id="Information">
+                <h3 class="label">{{blog.name}}</h3>
 
 
-            <p>{{blog.description}}</p>
-
-
-        </div>
-        <div class="comfort" id="Comfort">
-            <div class="container">
-                <h3 class="label">Удобства</h3>
-                <div class="d-flex justify-content-md-between flex-column flex-md-row">
-                    <div v-for="comfort in blog.comforts" v-bind:key="comfort.id">
+                <p>{{blog.description}}</p>
+            </div>
+            <div class="comfort" id="Comfort">
+                <div class="container">
+                    <h3 class="label">Удобства</h3>
+                    <div class="d-flex justify-content-md-between flex-column flex-md-row">
+                        <div v-for="comfort in blog.comforts" v-bind:key="comfort.id">
+                            <div class="text-center condition d-flex flex-column">
+                                <img src="../assets/global.svg" alt="">
+                                <p class="mt-auto">{{comfort.name}}</p>
+                            </div>
+                        </div>
+                        <!-- <div class="text-center condition d-flex flex-column">
+                            <img src="../assets/tv.svg" alt="">
+                            <p class="mt-auto">Телевизор</p>
+                        </div>
                         <div class="text-center condition d-flex flex-column">
-                            <img src="../assets/global.svg" alt="">
-                            <p class="mt-auto">{{comfort.name}}</p>
+                            <img src="../assets/coffee.svg" alt="">
+                            <p class="mt-auto">Завтрак</p>
                         </div>
+                        <div class="text-center condition d-flex flex-column">
+                            <img src="../assets/shower.svg" alt="">
+                            <p class="mt-auto">Душевая кабинка</p>
+                        </div>
+                        <div class="text-center condition d-flex flex-column">
+                            <img src="../assets/washer.svg" alt="">
+                            <p class="mt-auto">Стиральная машина</p>
+                        </div> -->
                     </div>
-                    <!-- <div class="text-center condition d-flex flex-column">
-                        <img src="../assets/tv.svg" alt="">
-                        <p class="mt-auto">Телевизор</p>
-                    </div>
-                    <div class="text-center condition d-flex flex-column">
-                        <img src="../assets/coffee.svg" alt="">
-                        <p class="mt-auto">Завтрак</p>
-                    </div>
-                    <div class="text-center condition d-flex flex-column">
-                        <img src="../assets/shower.svg" alt="">
-                        <p class="mt-auto">Душевая кабинка</p>
-                    </div>
-                    <div class="text-center condition d-flex flex-column">
-                        <img src="../assets/washer.svg" alt="">
-                        <p class="mt-auto">Стиральная машина</p>
-                    </div> -->
                 </div>
             </div>
-        </div>
 
-        <div class="rooms" id="Number">
-            <div class="container">
-                <h3 class="label">Номера</h3>
-                <div class="prices d-flex justify-content-md-between flex-column flex-md-row">
-                    <div v-for="room in blog.rooms" v-bind:key="room.id" class="text-center">
+            <div class="rooms" id="Number">
+                <div class="container">
+                    <h3 class="label">Номера</h3>
+                    <div class="prices d-flex justify-content-md-between flex-column flex-md-row">
+                        <div v-for="room in blog.rooms" v-bind:key="room.id" class="text-center">
                             <img src="room.icon" alt="">
                             <p class="room-name">{{room.name}}</p>
                             <h1 class="room-price">{{room.price}}</h1>
                             <p class="room-type">{{room.room_type.name}}</p>
+                        </div>
+                        <!--
+                                            <div class="text-center">
+                                                <p class="room-name">Трехметный номер</p>
+                                                <h1 class="room-price">18.000 тг</h1>
+                                                <p class="room-type">Стандартный</p>
+                                            </div>
+                                            <div class="text-center">
+                                                <p class="room-name">Четырехместный номер</p>
+                                                <h1 class="room-price">23.500 тг</h1>
+                                                <p class="room-type">Стандартный</p>
+                                            </div>-->
                     </div>
-<!--
-                    <div class="text-center">
-                        <p class="room-name">Трехметный номер</p>
-                        <h1 class="room-price">18.000 тг</h1>
-                        <p class="room-type">Стандартный</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="room-name">Четырехместный номер</p>
-                        <h1 class="room-price">23.500 тг</h1>
-                        <p class="room-type">Стандартный</p>
-                    </div>-->
                 </div>
             </div>
-        </div>
-        <div class="location" id="Map">
-            <div class="container">
-                <h3 class="label">Местоположение</h3>
-                <div>
-                     <br>
-                    По идее мына жерде карта туруы керек
+            <div class="location" id="Map">
+                <div class="container">
+                    <h3 class="label">Местоположение</h3>
+                    <div>
+                        <br>
+                        По идее мына жерде карта туруы керек
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-  </div>
 </template>
-
 <script>
     export default {
 
@@ -185,13 +184,13 @@
 </script>
 
 <style scoped>
-  a{
-    color: white;
-    text-decoration: none;
-  }
-  a:hover {
-    color: white;
-  }
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    a:hover {
+        color: white;
+    }
 
     .landing {
         color: #4A4A4A;
@@ -315,38 +314,53 @@
     .location {
         padding-top: 100px;
     }
+    @media screen and (max-width: 576px) {
+        .rooms .prices div {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .for-form {
+            width: 100%;
+            padding: 20px 25px;
+        }
+    }
     .header {
-      width: 100%;
-      position: absolute;
-      color: white;
+        width: 100%;
+        position: absolute;
+        color: white;
     }
     .logo {
-      margin-top: 30px;
+        margin-top: 30px;
     }
     .links {
-      margin-top: 15px;
+        margin-top: 15px;
     }
     .links li {
-      margin-left: 50px;
-      padding-top: 20px;
-      font-size: 22px;
-      line-height: 29px;
+        margin-left: 50px;
+        padding-top: 20px;
+        font-size: 22px;
+        line-height: 29px;
     }
     .active {
-      padding-top: 16px !important;
-      border-top: white solid 4px;
+        padding-top: 16px !important;
+        border-top: white solid 4px;
     }
-  @media screen and (max-width: 576px) {
-      .links {
-          display: none;
-      }
-      .hamburger-menu {
-          display: block;
-      }
-      .logo {
-          font-size: 26px;
-          line-height: 35px;
-      }
-  }
+    .hamburger-menu {
+        display: none;
+    }
+    @media screen and (max-width: 576px) {
+        .links {
+            display: none;
+        }
 
-</style>
+        .hamburger-menu {
+            display: block;
+            padding-bottom: 10px;
+        }
+
+        .logo {
+            font-size: 26px;
+            line-height: 35px;
+        }
+    }
+    </style>
