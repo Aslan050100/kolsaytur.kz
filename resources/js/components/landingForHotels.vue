@@ -2,9 +2,11 @@
     <div>
         <div class="header">
             <div class="container d-flex justify-content-between">
+                <router-link to="/">
                 <div class="logo">
                     <h3>Kolsaytur</h3>
                 </div>
+                </router-link>
                 <div class="links">
                     <ul class="d-flex list-inline">
                         <li class="active"><a href="#Galery">Галерея</a></li>
@@ -32,20 +34,20 @@
                             <div class="d-flex">
                                 <div class="w-50 mr-2">
                                     <label for="comingDate">Прибытие</label>
-                                    <input type="text" id="comingDate" placeholder="дд.мм.гг" name="checkin" v-model="bron.checkin">
-                                    <date-picker v-model="bron.checkin" lang="en" id="comingDate" placeholder="дд.мм.гг" name="checkin"  type="date" format="YYYY-MM-dd"></date-picker>
+                                    <input type="text" id="comingDate" placeholder="дд.мм.гг" name="check_in" v-model="bron.check_in">
+                                    <date-picker v-model="bron.check_in" lang="en" id="comingDate" placeholder="дд.мм.гг" name="check_in"  type="date" format="YYYY-MM-dd"></date-picker>
                                 </div>
                                 <div class="w-50">
                                     <label for="outDate">Выезд</label>
-                                    <input type="text" id="outDate" placeholder="дд.мм.гг" name="checout" v-model="bron.checkout">
+                                    <input type="text" id="outDate" placeholder="дд.мм.гг" name="check_out" v-model="bron.check_out">
                                 </div>
                             </div>
                             <input type="text" placeholder="Ф.И.О." name="name" v-model="bron.name">
                             <input type="text" placeholder="Электронная почта" name="email" v-model="bron.email">
-                            <input type="text" placeholder="Телефон" v-model="bron.phone" name="phone">
+                            <input type="text" placeholder="Телефон" v-model="bron.phone_number" name="phone_number">
                             <label for="count">Количество гостей</label>
                             <input type="text" id="count" value="1" v-model="bron.adults" name="adults">
-                            <input type="submit" value="Бронировать" @click.prevent="">
+                            <input type="submit" value="Бронировать" @click.prevent="post">
 
                         </form>
                     </div>
@@ -98,16 +100,16 @@
                             <p class="room-type">{{room.room_type.name}}</p>
                         </div>
                         <!--
-                                            <div class="text-center">
-                                                <p class="room-name">Трехметный номер</p>
-                                                <h1 class="room-price">18.000 тг</h1>
-                                                <p class="room-type">Стандартный</p>
-                                            </div>
-                                            <div class="text-center">
-                                                <p class="room-name">Четырехместный номер</p>
-                                                <h1 class="room-price">23.500 тг</h1>
-                                                <p class="room-type">Стандартный</p>
-                                            </div>-->
+                        <div class="text-center">
+                            <p class="room-name">Трехметный номер</p>
+                            <h1 class="room-price">18.000 тг</h1>
+                            <p class="room-type">Стандартный</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="room-name">Четырехместный номер</p>
+                            <h1 class="room-price">23.500 тг</h1>
+                            <p class="room-type">Стандартный</p>
+                        </div>-->
                     </div>
                 </div>
             </div>
@@ -132,7 +134,7 @@
           id: this.$route.params.id,
           blog:[],
           bron: {
-              product_id: 1,
+              product_id: this.$route.params.id,
               check_in: '',
               check_out: '',
             name: '',
@@ -168,9 +170,7 @@
                   room_id: this.bron.room_id,
 
         }).then(function (data) {
-              console.log(6846531245);
-              console.log(6846531245);
-              console.log(6846531245);
+              console.log('Data inserted!!!');
     console.log(data);
         }).then(response => {
             console.log(response)
