@@ -43925,60 +43925,37 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "d-flex" }, [
-                  _c(
-                    "div",
-                    { staticClass: "w-50 mr-2" },
-                    [
-                      _c("label", { attrs: { for: "comingDate" } }, [
-                        _vm._v("Прибытие")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.bron.check_in,
-                            expression: "bron.check_in"
-                          }
-                        ],
-                        attrs: {
-                          type: "text",
-                          id: "comingDate",
-                          placeholder: "дд.мм.гг",
-                          name: "check_in"
-                        },
-                        domProps: { value: _vm.bron.check_in },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(_vm.bron, "check_in", $event.target.value)
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("date-picker", {
-                        attrs: {
-                          lang: "en",
-                          id: "comingDate",
-                          placeholder: "дд.мм.гг",
-                          name: "check_in",
-                          type: "date",
-                          format: "YYYY-MM-dd"
-                        },
-                        model: {
+                  _c("div", { staticClass: "w-50 mr-2" }, [
+                    _c("label", { attrs: { for: "comingDate" } }, [
+                      _vm._v("Прибытие")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
                           value: _vm.bron.check_in,
-                          callback: function($$v) {
-                            _vm.$set(_vm.bron, "check_in", $$v)
-                          },
                           expression: "bron.check_in"
                         }
-                      })
-                    ],
-                    1
-                  ),
+                      ],
+                      attrs: {
+                        type: "text",
+                        id: "comingDate",
+                        placeholder: "дд.мм.гг",
+                        name: "check_in"
+                      },
+                      domProps: { value: _vm.bron.check_in },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.bron, "check_in", $event.target.value)
+                        }
+                      }
+                    })
+                  ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "w-50" }, [
                     _c("label", { attrs: { for: "outDate" } }, [
@@ -44269,7 +44246,7 @@ var staticRenderFns = [
         _c("div", [
           _c("br"),
           _vm._v(
-            "\n                    По идее мына жерде карта туруы керек\n                "
+            "\n                        По идее мына жерде карта туруы керек\n                    "
           )
         ])
       ])

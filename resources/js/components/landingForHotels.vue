@@ -35,7 +35,7 @@
                                 <div class="w-50 mr-2">
                                     <label for="comingDate">Прибытие</label>
                                     <input type="text" id="comingDate" placeholder="дд.мм.гг" name="check_in" v-model="bron.check_in">
-                                    <date-picker v-model="bron.check_in" lang="en" id="comingDate" placeholder="дд.мм.гг" name="check_in"  type="date" format="YYYY-MM-dd"></date-picker>
+<!--                                    <date-picker v-model="bron.check_in" lang="en" id="comingDate" placeholder="дд.мм.гг" name="check_in"  type="date" format="YYYY-MM-dd"></date-picker>-->
                                 </div>
                                 <div class="w-50">
                                     <label for="outDate">Выезд</label>
@@ -171,7 +171,7 @@
 
         }).then(function (data) {
               console.log('Data inserted!!!');
-    console.log(data);
+              console.log(data);
         }).then(response => {
             console.log(response)
         })

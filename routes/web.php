@@ -77,4 +77,11 @@ Route::group(['middleware' => 'auth'], function () {
 	//Route::get('pro_comEdit/{id}',['as'=>'pro_com.edit','uses'=>'ProductComfortController@edit']);
 	Route::post('pro_comStore',['as'=>'pro_com.store','uses'=>'ProductComfortController@store']);
 	//Route::match(['post','get'],'pro_comUpdate/{id}',['as'=>'pro_com.update','uses'=>'ProductComfortController@update']);
+    //Product_image
+    Route::get('product_image',['as'=>'product_image','uses'=>'ProductImageAdminController@index']);
+    Route::get('product_imageCreate',['as'=>'product_image.create','uses'=>'ProductImageAdminController@create']);
+    Route::match(['get','post'],'product_imageDestroy/{id}',['as'=>'product_image.destroy','uses'=>'ProductImageAdminController@destroy']);
+    Route::get('product_imageEdit/{id}',['as'=>'product_image.edit','uses'=>'ProductImageAdminController@edit']);
+    Route::post('product_imageStore',['as'=>'product_image.store','uses'=>'ProductImageAdminController@store']);
+    Route::match(['post','get'],'product_imageUpdate/{id}',['as'=>'product_image.update','uses'=>'ProductImageAdminController@update']);
 });

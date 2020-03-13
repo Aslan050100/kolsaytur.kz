@@ -2,10 +2,12 @@
 
 namespace App\Http\Resources;
 
+use App\ProductImage;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 use App\Http\Resources\Comfort as ComfortResource;
 use App\Http\Resources\Room as RoomResource;
+use App\Http\Resources\ProductImage as ProductImageResource;
 class Product extends JsonResource
 {
     /**
@@ -28,7 +30,7 @@ class Product extends JsonResource
             'image' => $this->image_url,
             'comforts' => ComfortResource::collection($this->comforts),
             'rooms'=>RoomResource::collection($this->rooms),
-
+            'product_images' => ProductImageResource::collection($this->product_images),
         ];
     }
 }

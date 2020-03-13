@@ -80,7 +80,7 @@
                     first_price: '',
                     second_price: ''
                 },
-                id:'',
+                id: '',
 
             }
         },

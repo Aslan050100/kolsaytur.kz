@@ -19,7 +19,9 @@ class Product extends Model
     public function cities(){
     	return $this->belongsTo('App\City');
     }
-
+    public function product_images(){
+        return $this->hasMany('App\ProductImage','pro_id','id');
+    }
 
     public function rooms(){
     	return $this->hasMany('App\Room','pro_id','id');

@@ -93,17 +93,17 @@
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('profile.edit') }}">
-                                    {{ __('User profile') }}
+                                    {{ __('Профиль') }}
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.index') }}">
-                                    {{ __('User Management') }}
-                                </a>
-                            </li>
+{{--                            <li class="nav-item">--}}
+{{--                                <a class="nav-link" href="{{ route('user.index') }}">--}}
+{{--                                    {{ __('User Management') }}--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                              <li class="nav-item">
                                 <a class="nav-link" href="{{ route('product') }}">
-                                    {{ __('Продукты') }}
+                                    {{ __('Гостиницы') }}
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -123,7 +123,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('product_type') }}">
-                                    {{ __('Типы продуктов') }}
+                                    {{ __('Типы гостиниц') }}
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -134,6 +134,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('room_type') }}">
                                     {{ __('Виды комнат') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('product_image') }}">
+                                    {{ __('Фото гостиниц') }}
                                 </a>
                             </li>
                             <li class="nav-item">
