@@ -17,6 +17,9 @@ class Room extends Model
     public function product(){
     	return $this->belongsTo('App\Product','pro_id','id');
     }
+    public function orders(){
+        return $this->hasMany('App\Order','id','room_id');
+    }
     public function getImageUrlAttribute(): string
     {
         $image_url = $this->image;

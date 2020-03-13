@@ -26,6 +26,9 @@ class Product extends Model
     public function rooms(){
     	return $this->hasMany('App\Room','pro_id','id');
     }
+    public function orders(){
+        return $this->hasMany('App\Order','id','product_id');
+    }
 
     public function comforts(){
     	return $this->belongsToMany('App\Comfort','pro_com','pro_id','com_id');

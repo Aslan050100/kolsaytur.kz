@@ -12,10 +12,10 @@
                             <div class="col-8">
                                 <h3 class="mb-0">{{ __('Заказы') }}</h3>
                             </div>
-                           
+
                         </div>
                     </div>
-                    
+
                     <div class="col-12">
                         @if (session('status'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -35,8 +35,8 @@
                                     <th scope="col">{{ __('Эмейл') }}</th>
                                     <th scope="col">{{ __('Номер телефона') }}</th>
                                     <th scope="col">{{ __('Люди') }}</th>
-                                     <th scope="col">{{ __('Дети') }}</th>
-                                     <th scope="col">{{ __('Тип номера') }}</th>
+                                     <th scope="col">{{ __('Гостиница') }}</th>
+                                     <th scope="col">{{ __('Комната') }}</th>
                                     <th scope="col">{{ __('Дата создания') }}</th>
                                     <th scope="col">{{ __('Дата обновления') }}</th>
                                     <th scope="col"></th>
@@ -51,8 +51,8 @@
                                         </td>
                                     <td>{{ $order->phone_number}}</td>
                                     <td>{{ $order->adults}}</td>
-                                    <td>{{ $order->children}}</td>
-                                    <td>{{ $order->room_type}}</td>
+                                    <td>{{ $order->product->name}}</td>
+                                    <td>{{ $order->room->name}}</td>
                                         <td>{{ $order->created_at}}</td>
                                         <td>{{ $order->updated_at}}</td>
                                         <td class="text-right">
@@ -60,15 +60,15 @@
                                                 <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </a>
-                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">                                                   
+                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                         <form action="{{ route('order.destroy', $order->id) }}" method="post">
                                                             @csrf
-                                                           
+
                                                             <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">
                                                                 {{ __('Удалить') }}
                                                             </button>
-                                                        </form>    
-                                                   
+                                                        </form>
+
                                                 </div>
                                             </div>
                                         </td>
@@ -85,7 +85,7 @@
                 </div>
             </div>
         </div>
-            
+
         @include('layouts.footers.auth')
     </div>
 @endsection

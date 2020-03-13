@@ -117,11 +117,6 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('order') }}">
-                                    {{ __('Заказы') }}
-                                </a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('product_type') }}">
                                     {{ __('Типы гостиниц') }}
                                 </a>
@@ -144,6 +139,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('pro_com') }}">
                                     {{ __('Продукты и Удобство') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('order') }}">
+                                    {{ __('Заказы') }}
                                 </a>
                             </li>
                         </ul>

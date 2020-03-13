@@ -102,7 +102,7 @@
                 })
             },
             postID: function () {
-                this.$http.post('http://sirius.onmonday.kz/api/checkIp',{
+                this.$http.get('http://sirius.onmonday.kz/api/checkIp',{
                     id: this.id
                 }).then((function (data) {
                     console.log(data);
