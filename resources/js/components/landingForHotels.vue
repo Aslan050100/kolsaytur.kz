@@ -34,12 +34,12 @@
                             <div class="d-flex">
                                 <div class="w-50 mr-2">
                                     <label for="comingDate">Прибытие</label>
-                                    <input type="text" id="comingDate" placeholder="дд.мм.гг" name="check_in" v-model="bron.check_in">
-<!--                                    <date-picker v-model="bron.check_in" lang="en" id="comingDate" placeholder="дд.мм.гг" name="check_in"  type="date" format="YYYY-MM-dd"></date-picker>-->
+                                    <input type="text" id="comingDate" placeholder="17-03-20" name="check_in" v-model="bron.check_in">
+                                    <datepicker v-model="bron.check_in" lang="en" id="comingDate" name="check_in" type="date" format="YYYY-MM-dd"></datepicker>
                                 </div>
                                 <div class="w-50">
                                     <label for="outDate">Выезд</label>
-                                    <input type="text" id="outDate" placeholder="дд.мм.гг" name="check_out" v-model="bron.check_out">
+                                    <input type="text" id="outDate" placeholder="20-03-20" name="check_out" v-model="bron.check_out">
                                 </div>
                             </div>
                             <input type="text" placeholder="Ф.И.О." name="name" v-model="bron.name">
@@ -48,7 +48,6 @@
                             <label for="count">Количество гостей</label>
                             <input type="text" id="count" value="1" v-model="bron.adults" name="adults">
                             <input type="submit" value="Бронировать" @click.prevent="post">
-
                         </form>
                     </div>
                 </div>
@@ -69,22 +68,6 @@
                                 <p class="mt-auto">{{comfort.name}}</p>
                             </div>
                         </div>
-                        <!-- <div class="text-center condition d-flex flex-column">
-                            <img src="../assets/tv.svg" alt="">
-                            <p class="mt-auto">Телевизор</p>
-                        </div>
-                        <div class="text-center condition d-flex flex-column">
-                            <img src="../assets/coffee.svg" alt="">
-                            <p class="mt-auto">Завтрак</p>
-                        </div>
-                        <div class="text-center condition d-flex flex-column">
-                            <img src="../assets/shower.svg" alt="">
-                            <p class="mt-auto">Душевая кабинка</p>
-                        </div>
-                        <div class="text-center condition d-flex flex-column">
-                            <img src="../assets/washer.svg" alt="">
-                            <p class="mt-auto">Стиральная машина</p>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -99,17 +82,6 @@
                             <h1 class="room-price">{{room.price}}</h1>
                             <p class="room-type">{{room.room_type.name}}</p>
                         </div>
-                        <!--
-                        <div class="text-center">
-                            <p class="room-name">Трехметный номер</p>
-                            <h1 class="room-price">18.000 тг</h1>
-                            <p class="room-type">Стандартный</p>
-                        </div>
-                        <div class="text-center">
-                            <p class="room-name">Четырехместный номер</p>
-                            <h1 class="room-price">23.500 тг</h1>
-                            <p class="room-type">Стандартный</p>
-                        </div>-->
                     </div>
                 </div>
             </div>

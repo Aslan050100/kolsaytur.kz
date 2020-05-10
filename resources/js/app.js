@@ -21,7 +21,9 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueResource from 'vue-resource'
 import axios from 'axios'
+import Datepicker from 'vuejs-datepicker';
 
+Vue.use(Datepicker);
 Vue.use(VueResource);
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
@@ -39,6 +41,6 @@ const router = new VueRouter({
 
 const app = new Vue({
     el: '#app',
-    components: { App },
+    components: { App,Datepicker },
     router,
 });
